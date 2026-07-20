@@ -22,8 +22,12 @@ interface I18nContextValue {
   setLocale: (l: Locale) => void;
 }
 
-export const I18nContext = createContext<I18nContextValue>(null!);
+export const I18nContext = createContext<I18nContextValue | null>(null);
 
-export function useTranslation() {
-  return useContext(I18nContext);
+export function useTranslation(): I18nContextValue {
+  const ctx = useContext(I18nContext);
+  if (!ctx) {
+    throw new Error('useTranslation must be used within an <I18nContext.Provider>');
+  }
+  return ctx;
 }

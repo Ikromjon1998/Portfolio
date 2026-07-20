@@ -58,37 +58,51 @@ export const en: Translations = {
         title: 'AI-Integrated Compensation Analytics',
         role: 'Software Developer · gradar',
         desc: 'Building and extending a SaaS platform for job evaluation and compensation analytics (Laravel, React/TypeScript, PostgreSQL), with a growing layer of LLM-powered features for analysing and structuring HR data.',
-        metrics: ['Laravel + React/TS', 'LLM features'],
+        metrics: { laravelReactTs: 'Laravel + React/TS', llmFeatures: 'LLM features' },
       },
       binschonda: {
         title: 'B2B Healthcare Platform',
         role: 'Senior Full-Stack Developer / Product Owner · Binschonda (Pflegedienst, 200+ staff)',
         desc: 'Architected and built a scalable B2B healthcare platform in Laravel + React/TypeScript. Designed an OrderIntent → Gig/Tour automation workflow, role-based access control, and REST APIs integrating external partners (DMRZ). Owned roadmap priorities and mentored a junior engineer.',
-        metrics: ['API latency −40%', 'Dev velocity +30%', '100% on-time GDPR releases'],
+        metrics: {
+          apiLatency: 'API latency −40%',
+          devVelocity: 'Dev velocity +30%',
+          gdpr: '100% on-time GDPR releases',
+        },
       },
       iuContract: {
         title: 'Student Contract Lifecycle Platform',
         role: 'Full-Stack / QA Automation Engineer · IU Internationale Hochschule (5000+ staff)',
         desc: 'Extended an event-driven microservice architecture managing student contracts end-to-end, with Vue.js microfrontends and a Laravel backend. Implemented GDPR-compliant automated contract deletion via events and kept contract status synced with Workday in real time, at scale.',
-        metrics: ['Response time −40%', '100k+ students', 'Real-time Workday sync'],
+        metrics: {
+          responseTime: 'Response time −40%',
+          students: '100k+ students',
+          workdaySync: 'Real-time Workday sync',
+        },
       },
       iuQa: {
         title: 'Finance Data QA Automation',
         role: 'QA Automation / Full-Stack Engineer · IU Internationale Hochschule',
         desc: 'Built an end-to-end test framework from scratch in Playwright, validating data consistency between the student Case-System and Workday (finance, payments, HR). Integrated into the CI/CD pipeline to run automatically on every release, with automated failure reporting.',
-        metrics: ['Manual QA −50%+', 'Full coverage of finance flows'],
+        metrics: { manualQa: 'Manual QA −50%+', financeCoverage: 'Full coverage of finance flows' },
       },
       balt: {
         title: 'Smart Building Data Platform',
         role: 'Full-Stack Engineer · BALT Technologies (IoT consulting)',
         desc: 'Rebuilt the Laravel backend of a smart-building system and built tenant dashboards plus a sensor data pipeline (InfluxDB) running device-to-report. Added a Node.js service that automatically generates and emails tenant invoices, reusing existing data to avoid a separate billing system.',
-        metrics: ['Automated sensor → report pipeline', 'Fewer support requests'],
+        metrics: {
+          sensorPipeline: 'Automated sensor → report pipeline',
+          fewerSupport: 'Fewer support requests',
+        },
       },
       parking: {
         title: 'Multi-Garage Parking Platform',
-        role: 'Full-Stack Engineer · Bo\'lalar (Tashkent)',
+        role: "Full-Stack Engineer · Bo'lalar (Tashkent)",
         desc: 'Built a responsive booking app (React + Express, MERN stack) for eight multi-storey garages, with real-time per-floor availability and integration with physical access gates that open and close automatically on a successful booking. Held up under concurrent bookings.',
-        metrics: ['Real-time availability · 8 garages', 'Physical gate integration'],
+        metrics: {
+          realTimeAvailability: 'Real-time availability · 8 garages',
+          gateIntegration: 'Physical gate integration',
+        },
       },
     },
     references: {
@@ -104,26 +118,53 @@ export const en: Translations = {
     eyebrow: "Where I'm heading",
     heading: 'Engineering that {highlight} your data.',
     headingHighlight: 'understands',
-    desc: "My recent focus is wiring LLMs into real products — not demos. The same discipline I bring to regulated finance and healthcare systems, applied to AI features that have to be reliable, testable, and safe with sensitive data.",
+    desc: 'My recent focus is wiring LLMs into real products — not demos. The same discipline I bring to regulated finance and healthcare systems, applied to AI features that have to be reliable, testable, and safe with sensitive data.',
     items: [
-      { icon: 'API', title: 'LLM integration', desc: 'Anthropic & OpenAI APIs embedded into existing apps — assistants, structured extraction, automated workflows.' },
-      { icon: 'RAG', title: 'Retrieval-augmented systems', desc: 'Grounding models in your own documents and data so answers stay accurate and traceable.' },
-      { icon: '</>', title: 'Full-stack delivery', desc: 'From database to UI — an AI feature shipped as a complete, maintainable, well-tested piece of product.' },
+      {
+        icon: 'API',
+        title: 'LLM integration',
+        desc: 'Anthropic & OpenAI APIs embedded into existing apps — assistants, structured extraction, automated workflows.',
+      },
+      {
+        icon: 'RAG',
+        title: 'Retrieval-augmented systems',
+        desc: 'Grounding models in your own documents and data so answers stay accurate and traceable.',
+      },
+      {
+        icon: '</>',
+        title: 'Full-stack delivery',
+        desc: 'From database to UI — an AI feature shipped as a complete, maintainable, well-tested piece of product.',
+      },
     ],
   },
   languages: {
     idx: '/03',
     title: 'Languages',
     names: { uzbek: 'Uzbek', russian: 'Russian', english: 'English', german: 'German' },
-    levels: { uzbek: 'Native', russian: 'Native', english: 'Professional / fluent', german: 'B1 · telc certificate' },
+    levels: {
+      uzbek: 'Native',
+      russian: 'Native',
+      english: 'Professional / fluent',
+      german: 'B1 · telc certificate',
+    },
   },
   education: {
     idx: '/04',
     title: 'Education & certifications',
     hint: '',
     entries: {
-      polito: { year: 'Sep 2016 – Sep 2020', degree: 'B.Sc. Computer Engineering', institution: 'Politecnico di Torino · Turin, Italy', note: 'Focus: theoretical computer science, object-oriented programming, computer architecture and algorithms.' },
-      arden: { year: 'Nov 2021 – Jul 2022', degree: 'M.Sc. Data Analytics & Information Systems Management', institution: 'Arden University · Berlin, Germany', note: 'Partially completed (8.5 months). Skills gained in data analysis, documentation, and collaborative project work.' },
+      polito: {
+        year: 'Sep 2016 – Sep 2020',
+        degree: 'B.Sc. Computer Engineering',
+        institution: 'Politecnico di Torino · Turin, Italy',
+        note: 'Focus: theoretical computer science, object-oriented programming, computer architecture and algorithms.',
+      },
+      arden: {
+        year: 'Nov 2021 – Jul 2022',
+        degree: 'M.Sc. Data Analytics & Information Systems Management',
+        institution: 'Arden University · Berlin, Germany',
+        note: 'Partially completed (8.5 months). Skills gained in data analysis, documentation, and collaborative project work.',
+      },
     },
     certsLabel: 'Certifications & credentials',
     certs: {
@@ -142,7 +183,8 @@ export const en: Translations = {
   },
   cv: {
     downloadButton: 'Download CV',
-    summary: 'Senior Full-Stack Engineer with 6+ years building regulated, data-heavy platforms across healthcare, EdTech, and IoT. Backend-leaning (Laravel/PHP, PostgreSQL) with strong React/TypeScript frontend skills and a growing focus on production LLM integration (Anthropic, OpenAI, RAG). Based in Berlin with an unrestricted work permit.',
+    summary:
+      'Senior Full-Stack Engineer with 6+ years building regulated, data-heavy platforms across healthcare, EdTech, and IoT. Backend-leaning (Laravel/PHP, PostgreSQL) with strong React/TypeScript frontend skills and a growing focus on production LLM integration (Anthropic, OpenAI, RAG). Based in Berlin with an unrestricted work permit.',
     skillsTitle: 'Technical Skills',
     projectsTitle: 'Selected Projects',
     educationTitle: 'Education & Certifications',

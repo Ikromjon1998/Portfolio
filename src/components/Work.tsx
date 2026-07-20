@@ -1,5 +1,5 @@
 import { useTranslation } from '../i18n/useTranslation';
-import { projects } from '../data/projects';
+import { projects, type MetricTrend, type Project } from '../data/projects';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 function ArrowUpIcon() {
@@ -18,22 +18,16 @@ function ArrowDownIcon() {
   );
 }
 
-function ProjectCard({ projectId, index: idx }: { projectId: string; index: number }) {
+function TrendIcon({ trend }: { trend: MetricTrend }) {
+  if (trend === 'up') return <ArrowUpIcon />;
+  if (trend === 'down') return <ArrowDownIcon />;
+  return null;
+}
+
+function ProjectCard({ project }: { project: Project }) {
   const { t } = useTranslation();
   const ref = useScrollReveal<HTMLElement>();
-  const project = projects[idx];
-  const pt = t.work.projects[projectId];
-
-  const metricIcon = (metricLabel: string) => {
-    if (metricLabel.includes('−') && metricLabel.includes('latency')) return <ArrowUpIcon />;
-    if (metricLabel.includes('−') && metricLabel.includes('Latenz')) return <ArrowUpIcon />;
-    if (metricLabel.includes('+') && metricLabel.includes('velocity')) return <ArrowUpIcon />;
-    if (metricLabel.includes('+') && metricLabel.includes('Geschwindigkeit')) return <ArrowUpIcon />;
-    if (metricLabel.includes('−') && metricLabel.includes('esponse')) return <ArrowUpIcon />;
-    if (metricLabel.includes('−') && metricLabel.includes('ntwortzeit')) return <ArrowUpIcon />;
-    if (metricLabel.includes('−') && metricLabel.includes('QA')) return <ArrowDownIcon />;
-    return null;
-  };
+  const pt = t.work.projects[project.id];
 
   return (
     <article className="proj reveal" ref={ref}>
@@ -47,16 +41,12 @@ function ProjectCard({ projectId, index: idx }: { projectId: string; index: numb
         <div className="proj-role">{pt.role}</div>
         <p className="proj-desc">{pt.desc}</p>
         <div className="impact">
-          {pt.metrics.map((label, i) => {
-            const metric = project.metrics[i];
-            const icon = metric?.type === 'positive' ? metricIcon(label) : null;
-            return (
-              <span key={i} className={`m${metric?.type === 'neutral' ? ' neutral' : ''}`}>
-                {icon}
-                {label}
-              </span>
-            );
-          })}
+          {project.metrics.map((metric) => (
+            <span key={metric.id} className={`m${metric.trend === 'neutral' ? ' neutral' : ''}`}>
+              <TrendIcon trend={metric.trend} />
+              {pt.metrics[metric.id]}
+            </span>
+          ))}
         </div>
         <div className="proj-foot">
           <div className="stack">
@@ -64,9 +54,7 @@ function ProjectCard({ projectId, index: idx }: { projectId: string; index: numb
               <span key={s}>{s}</span>
             ))}
           </div>
-          <span className="ref">
-            {t.work.references[project.referenceKey]}
-          </span>
+          <span className="ref">{t.work.references[project.referenceKey]}</span>
         </div>
       </div>
     </article>
@@ -86,8 +74,8 @@ export function Work() {
           <span className="hint">{t.work.hint}</span>
         </div>
         <div className="work">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.id} projectId={project.id} index={i} />
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>

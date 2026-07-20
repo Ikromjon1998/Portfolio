@@ -49,7 +49,9 @@ export function Hero() {
           <div className="rhead">
             <span>{t.record.label}</span>
             <span className="dots">
-              <i /><i /><i />
+              <i />
+              <i />
+              <i />
             </span>
           </div>
           <div className="rbody">

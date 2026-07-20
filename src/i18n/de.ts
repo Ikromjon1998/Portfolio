@@ -58,37 +58,54 @@ export const de: Translations = {
         title: 'KI-integrierte Vergütungsanalyse',
         role: 'Software Developer · gradar',
         desc: 'Entwicklung und Erweiterung einer SaaS-Plattform für Stellenbewertung und Vergütungsanalyse (Laravel, React/TypeScript, PostgreSQL) mit einer wachsenden Schicht LLM-gestützter Features zur Analyse und Strukturierung von HR-Daten.',
-        metrics: ['Laravel + React/TS', 'LLM-Features'],
+        metrics: { laravelReactTs: 'Laravel + React/TS', llmFeatures: 'LLM-Features' },
       },
       binschonda: {
         title: 'B2B-Healthcare-Plattform',
         role: 'Senior Full-Stack Developer / Product Owner · Binschonda (Pflegedienst, 200+ Mitarbeiter)',
         desc: 'Architektur und Entwicklung einer skalierbaren B2B-Healthcare-Plattform in Laravel + React/TypeScript. Design eines OrderIntent → Gig/Tour-Automatisierungs-Workflows, rollenbasierte Zugriffskontrolle und REST-APIs zur Integration externer Partner (DMRZ). Verantwortung für Roadmap-Prioritäten und Mentoring eines Junior-Entwicklers.',
-        metrics: ['API-Latenz −40%', 'Dev-Geschwindigkeit +30%', '100% termingerechte DSGVO-Releases'],
+        metrics: {
+          apiLatency: 'API-Latenz −40%',
+          devVelocity: 'Dev-Geschwindigkeit +30%',
+          gdpr: '100% termingerechte DSGVO-Releases',
+        },
       },
       iuContract: {
         title: 'Studienvertrags-Lifecycle-Plattform',
         role: 'Full-Stack / QA Automation Engineer · IU Internationale Hochschule (5000+ Mitarbeiter)',
         desc: 'Erweiterung einer event-getriebenen Microservice-Architektur zur End-to-End-Verwaltung von Studienverträgen mit Vue.js-Microfrontends und Laravel-Backend. Implementierung DSGVO-konformer automatisierter Vertragslöschung via Events und Echtzeit-Synchronisation des Vertragsstatus mit Workday im großen Maßstab.',
-        metrics: ['Antwortzeit −40%', '100k+ Studierende', 'Echtzeit-Workday-Sync'],
+        metrics: {
+          responseTime: 'Antwortzeit −40%',
+          students: '100k+ Studierende',
+          workdaySync: 'Echtzeit-Workday-Sync',
+        },
       },
       iuQa: {
         title: 'Finanzdaten-QA-Automatisierung',
         role: 'QA Automation / Full-Stack Engineer · IU Internationale Hochschule',
         desc: 'Aufbau eines End-to-End-Testframeworks von Grund auf in Playwright zur Validierung der Datenkonsistenz zwischen dem Case-System und Workday (Finanzen, Zahlungen, HR). Integration in die CI/CD-Pipeline mit automatischer Ausführung bei jedem Release und automatisiertem Fehler-Reporting.',
-        metrics: ['Manuelles QA −50%+', 'Vollständige Abdeckung der Finanzprozesse'],
+        metrics: {
+          manualQa: 'Manuelles QA −50%+',
+          financeCoverage: 'Vollständige Abdeckung der Finanzprozesse',
+        },
       },
       balt: {
         title: 'Smart-Building-Datenplattform',
         role: 'Full-Stack Engineer · BALT Technologies (IoT-Beratung)',
         desc: 'Neuaufbau des Laravel-Backends eines Smart-Building-Systems sowie Entwicklung von Mieter-Dashboards und einer Sensor-Datenpipeline (InfluxDB) für den Prozess vom Gerät bis zum Report. Ergänzung eines Node.js-Services zur automatischen Erstellung und dem Versand von Mieterrechnungen unter Wiederverwendung vorhandener Daten.',
-        metrics: ['Automatisierte Sensor-→-Report-Pipeline', 'Weniger Support-Anfragen'],
+        metrics: {
+          sensorPipeline: 'Automatisierte Sensor-→-Report-Pipeline',
+          fewerSupport: 'Weniger Support-Anfragen',
+        },
       },
       parking: {
         title: 'Multi-Parkhaus-Plattform',
-        role: 'Full-Stack Engineer · Bo\'lalar (Taschkent)',
+        role: "Full-Stack Engineer · Bo'lalar (Taschkent)",
         desc: 'Entwicklung einer responsiven Buchungs-App (React + Express, MERN-Stack) für acht mehrstöckige Parkhäuser mit Echtzeit-Verfügbarkeit pro Etage und Integration mit physischen Zugangsschranken, die bei erfolgreicher Buchung automatisch öffnen und schließen. Stabil unter gleichzeitigen Buchungen.',
-        metrics: ['Echtzeit-Verfügbarkeit · 8 Parkhäuser', 'Physische Schranken-Integration'],
+        metrics: {
+          realTimeAvailability: 'Echtzeit-Verfügbarkeit · 8 Parkhäuser',
+          gateIntegration: 'Physische Schranken-Integration',
+        },
       },
     },
     references: {
@@ -106,24 +123,51 @@ export const de: Translations = {
     headingHighlight: 'versteht',
     desc: 'Mein aktueller Fokus liegt darauf, LLMs in echte Produkte einzubinden — keine Demos. Dieselbe Sorgfalt, die ich bei regulierten Finanz- und Healthcare-Systemen anwende, übertragen auf KI-Features, die zuverlässig, testbar und sicher mit sensiblen Daten umgehen.',
     items: [
-      { icon: 'API', title: 'LLM-Integration', desc: 'Anthropic- & OpenAI-APIs eingebettet in bestehende Apps — Assistenten, strukturierte Extraktion, automatisierte Workflows.' },
-      { icon: 'RAG', title: 'Retrieval-Augmented-Systeme', desc: 'Modelle auf Ihre eigenen Dokumente und Daten geerdet, damit Antworten korrekt und nachvollziehbar bleiben.' },
-      { icon: '</>', title: 'Full-Stack-Lieferung', desc: 'Von der Datenbank bis zur UI — ein KI-Feature als vollständiges, wartbares, gut getestetes Produktelement ausgeliefert.' },
+      {
+        icon: 'API',
+        title: 'LLM-Integration',
+        desc: 'Anthropic- & OpenAI-APIs eingebettet in bestehende Apps — Assistenten, strukturierte Extraktion, automatisierte Workflows.',
+      },
+      {
+        icon: 'RAG',
+        title: 'Retrieval-Augmented-Systeme',
+        desc: 'Modelle auf Ihre eigenen Dokumente und Daten geerdet, damit Antworten korrekt und nachvollziehbar bleiben.',
+      },
+      {
+        icon: '</>',
+        title: 'Full-Stack-Lieferung',
+        desc: 'Von der Datenbank bis zur UI — ein KI-Feature als vollständiges, wartbares, gut getestetes Produktelement ausgeliefert.',
+      },
     ],
   },
   languages: {
     idx: '/03',
     title: 'Sprachen',
     names: { uzbek: 'Usbekisch', russian: 'Russisch', english: 'Englisch', german: 'Deutsch' },
-    levels: { uzbek: 'Muttersprache', russian: 'Muttersprache', english: 'Verhandlungssicher / fließend', german: 'B1 · telc-Zertifikat' },
+    levels: {
+      uzbek: 'Muttersprache',
+      russian: 'Muttersprache',
+      english: 'Verhandlungssicher / fließend',
+      german: 'B1 · telc-Zertifikat',
+    },
   },
   education: {
     idx: '/04',
     title: 'Ausbildung & Zertifikate',
     hint: '',
     entries: {
-      polito: { year: 'Sep 2016 – Sep 2020', degree: 'B.Sc. Computer Engineering', institution: 'Politecnico di Torino · Turin, Italien', note: 'Schwerpunkt: theoretische Informatik, objektorientierte Programmierung, Rechnerarchitektur und Algorithmen.' },
-      arden: { year: 'Nov 2021 – Jul 2022', degree: 'M.Sc. Data Analytics & Information Systems Management', institution: 'Arden University · Berlin, Deutschland', note: 'Teilweise absolviert (8,5 Monate). Kompetenzen in Datenanalyse, Dokumentation und kollaborativer Projektarbeit erworben.' },
+      polito: {
+        year: 'Sep 2016 – Sep 2020',
+        degree: 'B.Sc. Computer Engineering',
+        institution: 'Politecnico di Torino · Turin, Italien',
+        note: 'Schwerpunkt: theoretische Informatik, objektorientierte Programmierung, Rechnerarchitektur und Algorithmen.',
+      },
+      arden: {
+        year: 'Nov 2021 – Jul 2022',
+        degree: 'M.Sc. Data Analytics & Information Systems Management',
+        institution: 'Arden University · Berlin, Deutschland',
+        note: 'Teilweise absolviert (8,5 Monate). Kompetenzen in Datenanalyse, Dokumentation und kollaborativer Projektarbeit erworben.',
+      },
     },
     certsLabel: 'Zertifikate & Nachweise',
     certs: {
@@ -142,7 +186,8 @@ export const de: Translations = {
   },
   cv: {
     downloadButton: 'Lebenslauf herunterladen',
-    summary: 'Senior Full-Stack Engineer mit 6+ Jahren Erfahrung im Aufbau regulierter, datenintensiver Plattformen in Healthcare, EdTech und IoT. Backend-fokussiert (Laravel/PHP, PostgreSQL) mit starken React/TypeScript-Frontend-Kenntnissen und wachsendem Fokus auf produktive LLM-Integration (Anthropic, OpenAI, RAG). Ansässig in Berlin mit unbefristeter Aufenthaltserlaubnis.',
+    summary:
+      'Senior Full-Stack Engineer mit 6+ Jahren Erfahrung im Aufbau regulierter, datenintensiver Plattformen in Healthcare, EdTech und IoT. Backend-fokussiert (Laravel/PHP, PostgreSQL) mit starken React/TypeScript-Frontend-Kenntnissen und wachsendem Fokus auf produktive LLM-Integration (Anthropic, OpenAI, RAG). Ansässig in Berlin mit unbefristeter Aufenthaltserlaubnis.',
     skillsTitle: 'Technische Fähigkeiten',
     projectsTitle: 'Ausgewählte Projekte',
     educationTitle: 'Ausbildung & Zertifikate',

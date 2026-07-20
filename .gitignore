@@ -4,3 +4,6 @@ dist
 *.local
 .idea
 tsconfig.tsbuildinfo
+
+coverage
+*.tsbuildinfo

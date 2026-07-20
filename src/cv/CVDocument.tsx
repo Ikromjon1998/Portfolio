@@ -241,11 +241,12 @@ export function CVDocument({ locale }: Props) {
   return (
     <Document>
       <Page size="A4" style={s.page}>
-        {/* Header */}
         <View style={s.header}>
           <Text style={s.name}>{personal.name}</Text>
           <View style={s.titleRow}>
-            <Text style={s.subtitle}>{t.record.role} · {t.record.roleSub}</Text>
+            <Text style={s.subtitle}>
+              {t.record.role} · {t.record.roleSub}
+            </Text>
             <Text style={s.subtitle}>{t.record.based}</Text>
           </View>
           <View style={s.contactRow}>
@@ -261,10 +262,8 @@ export function CVDocument({ locale }: Props) {
           </View>
         </View>
 
-        {/* Summary */}
         <Text style={s.summary}>{t.cv.summary}</Text>
 
-        {/* Skills */}
         <Text style={s.sectionTitle}>{t.cv.skillsTitle}</Text>
         {expertiseGroups.map((group) => (
           <View key={group.key} style={s.skillGroup}>
@@ -273,7 +272,6 @@ export function CVDocument({ locale }: Props) {
           </View>
         ))}
 
-        {/* Projects */}
         <Text style={s.sectionTitle}>{t.cv.projectsTitle}</Text>
         {projects.map((project) => {
           const pt = t.work.projects[project.id];
@@ -295,16 +293,19 @@ export function CVDocument({ locale }: Props) {
               </View>
               <Text style={s.projDesc}>{pt.desc}</Text>
               <View style={s.projImpact}>
-                {pt.metrics.map((m, i) => (
-                  <Text key={i} style={s.impactTag}>{m}</Text>
+                {project.metrics.map((metric) => (
+                  <Text key={metric.id} style={s.impactTag}>
+                    {pt.metrics[metric.id]}
+                  </Text>
                 ))}
               </View>
-              <Text style={s.projStack}>{t.cv.stack}: {project.stack.join(' · ')}</Text>
+              <Text style={s.projStack}>
+                {t.cv.stack}: {project.stack.join(' · ')}
+              </Text>
             </View>
           );
         })}
 
-        {/* Education */}
         <Text style={s.sectionTitle}>{t.cv.educationTitle}</Text>
         {educationEntries.map((entry) => {
           const et = t.education.entries[entry.key];
@@ -318,11 +319,12 @@ export function CVDocument({ locale }: Props) {
         })}
         <View style={s.certRow}>
           {certifications.map((certKey) => (
-            <Text key={certKey} style={s.certTag}>{t.education.certs[certKey]}</Text>
+            <Text key={certKey} style={s.certTag}>
+              {t.education.certs[certKey]}
+            </Text>
           ))}
         </View>
 
-        {/* Languages */}
         <Text style={s.sectionTitle}>{t.cv.languagesTitle}</Text>
         <View style={s.langRow}>
           {spokenLanguages.map((lang) => (

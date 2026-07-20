@@ -4,7 +4,7 @@ export interface ProjectTranslation {
   title: string;
   role: string;
   desc: string;
-  metrics: string[];
+  metrics: Record<string, string>;
 }
 
 export interface EducationTranslation {

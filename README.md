@@ -1,5 +1,9 @@
 # Ikromjon Ochilov — Portfolio
 
+[![CI](https://github.com/Ikromjon1998/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Ikromjon1998/Portfolio/actions/workflows/ci.yml)
+
+**Live:** [ikromjon-ochilov.com](https://ikromjon-ochilov.com/)
+
 Vite + React + TypeScript portfolio with bilingual support (EN/DE), dark mode, and on-the-fly PDF CV generation.
 
 ## Local development

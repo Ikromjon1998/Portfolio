@@ -18,7 +18,7 @@ export function useDarkMode() {
   }, [theme]);
 
   const toggle = useCallback(() => {
-    setThemeState(prev => (prev === 'light' ? 'dark' : 'light'));
+    setThemeState((prev) => (prev === 'light' ? 'dark' : 'light'));
   }, []);
 
   return { theme, toggle };

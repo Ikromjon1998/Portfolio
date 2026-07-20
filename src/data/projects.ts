@@ -1,6 +1,10 @@
+export type MetricTrend = 'up' | 'down' | 'neutral';
+
 export interface ProjectMetric {
-  type: 'positive' | 'neutral';
-  key: string;
+  /** Stable id used to look up the localized label in the translation files. */
+  id: string;
+  /** Direction of the impact arrow; `neutral` renders no arrow. */
+  trend: MetricTrend;
 }
 
 export interface Project {
@@ -24,8 +28,8 @@ export const projects: Project[] = [
     stack: ['Laravel', 'React', 'TypeScript', 'PostgreSQL', 'Anthropic / OpenAI'],
     referenceKey: 'refGradar',
     metrics: [
-      { type: 'neutral', key: 'laravelReactTs' },
-      { type: 'neutral', key: 'llmFeatures' },
+      { id: 'laravelReactTs', trend: 'neutral' },
+      { id: 'llmFeatures', trend: 'neutral' },
     ],
   },
   {
@@ -34,12 +38,22 @@ export const projects: Project[] = [
     domain: 'Healthcare',
     duration: '15 months',
     isCurrent: false,
-    stack: ['Laravel', 'PHP 8', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'Inertia.js', 'Spatie', 'Pest / Vitest / Playwright'],
+    stack: [
+      'Laravel',
+      'PHP 8',
+      'React',
+      'TypeScript',
+      'PostgreSQL',
+      'Docker',
+      'Inertia.js',
+      'Spatie',
+      'Pest / Vitest / Playwright',
+    ],
     referenceKey: 'refBinschonda',
     metrics: [
-      { type: 'positive', key: 'apiLatency' },
-      { type: 'positive', key: 'devVelocity' },
-      { type: 'neutral', key: 'gdpr' },
+      { id: 'apiLatency', trend: 'up' },
+      { id: 'devVelocity', trend: 'up' },
+      { id: 'gdpr', trend: 'neutral' },
     ],
   },
   {
@@ -51,9 +65,9 @@ export const projects: Project[] = [
     stack: ['Laravel', 'PHP 8', 'Vue.js', 'React', 'Kafka', 'PostgreSQL', 'Docker', 'GitLab CI/CD'],
     referenceKey: 'refIuContract',
     metrics: [
-      { type: 'positive', key: 'responseTime' },
-      { type: 'neutral', key: 'students' },
-      { type: 'neutral', key: 'workdaySync' },
+      { id: 'responseTime', trend: 'up' },
+      { id: 'students', trend: 'neutral' },
+      { id: 'workdaySync', trend: 'neutral' },
     ],
   },
   {
@@ -65,8 +79,8 @@ export const projects: Project[] = [
     stack: ['Playwright', 'TypeScript', 'Node.js', 'GitLab CI/CD', 'Allure', 'Workday APIs'],
     referenceKey: 'refIuQa',
     metrics: [
-      { type: 'positive', key: 'manualQa' },
-      { type: 'neutral', key: 'financeCoverage' },
+      { id: 'manualQa', trend: 'down' },
+      { id: 'financeCoverage', trend: 'neutral' },
     ],
   },
   {
@@ -78,8 +92,8 @@ export const projects: Project[] = [
     stack: ['Laravel 9', 'PHP 8', 'Blade', 'InfluxDB', 'Node.js', 'REST APIs'],
     referenceKey: 'refBalt',
     metrics: [
-      { type: 'neutral', key: 'sensorPipeline' },
-      { type: 'neutral', key: 'fewerSupport' },
+      { id: 'sensorPipeline', trend: 'neutral' },
+      { id: 'fewerSupport', trend: 'neutral' },
     ],
   },
   {
@@ -91,8 +105,8 @@ export const projects: Project[] = [
     stack: ['React', 'Express.js', 'Node.js', 'MongoDB', 'REST APIs', 'IoT integration'],
     referenceKey: 'refParking',
     metrics: [
-      { type: 'neutral', key: 'realTimeAvailability' },
-      { type: 'neutral', key: 'gateIntegration' },
+      { id: 'realTimeAvailability', trend: 'neutral' },
+      { id: 'gateIntegration', trend: 'neutral' },
     ],
   },
 ];
