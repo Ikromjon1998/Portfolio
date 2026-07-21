@@ -1,6 +1,11 @@
 import type { Translations } from './types';
 
 export const de = {
+  meta: {
+    title: 'Ikromjon Ochilov — Senior Full-Stack Engineer · Berlin',
+    description:
+      'Senior Full-Stack Engineer in Berlin — Laravel, React/TypeScript, PostgreSQL und produktive LLM-Integration. Offen für Freelance-Projekte.',
+  },
   topbar: {
     available: 'Verfügbar für Projekte',
     location: '· Berlin, DE',
@@ -154,7 +159,6 @@ export const de = {
   education: {
     idx: '/04',
     title: 'Ausbildung & Zertifikate',
-    hint: '',
     entries: {
       polito: {
         year: 'Sep 2016 – Sep 2020',
@@ -179,9 +183,10 @@ export const de = {
     eyebrow: 'Offen für Freelance-Projekte',
     heading: 'Ein System, das\ngebaut werden muss?',
     desc: 'Klarer Scope, remote geliefert an Abenden und Wochenenden. Sagen Sie mir, was Sie brauchen — ich sage Ihnen ehrlich, ob ich der Richtige bin.',
+    mailSubject: 'Projektanfrage',
   },
   footer: {
-    copyright: '© 2026 Ikromjon Ochilov — Berlin',
+    copyright: 'Ikromjon Ochilov — Berlin',
     tagline: 'Senior Full-Stack Engineer · Laravel · React · AI',
   },
   cv: {
@@ -192,11 +197,8 @@ export const de = {
     projectsTitle: 'Ausgewählte Projekte',
     educationTitle: 'Ausbildung & Zertifikate',
     languagesTitle: 'Sprachen',
-    contactTitle: 'Kontakt',
-    profileTitle: 'Profil',
     role: 'Rolle',
     duration: 'Dauer',
-    impact: 'Ergebnis',
     stack: 'Stack',
   },
 } satisfies Translations;

@@ -13,7 +13,6 @@ interface ProjectShape {
   index: string;
   domain: string;
   duration: string;
-  isCurrent: boolean;
   stack: readonly string[];
   /** Key into the localized `work.references` map. */
   referenceKey: string;
@@ -26,7 +25,6 @@ export const projects = [
     index: '00 · current',
     domain: 'HR-Tech',
     duration: 'ongoing',
-    isCurrent: true,
     stack: ['Laravel', 'React', 'TypeScript', 'PostgreSQL', 'Anthropic / OpenAI'],
     referenceKey: 'refGradar',
     metrics: [
@@ -39,7 +37,6 @@ export const projects = [
     index: '01',
     domain: 'Healthcare',
     duration: '15 months',
-    isCurrent: false,
     stack: [
       'Laravel',
       'PHP 8',
@@ -63,7 +60,6 @@ export const projects = [
     index: '02',
     domain: 'EdTech',
     duration: '12 months',
-    isCurrent: false,
     stack: ['Laravel', 'PHP 8', 'Vue.js', 'React', 'Kafka', 'PostgreSQL', 'Docker', 'GitLab CI/CD'],
     referenceKey: 'refIuContract',
     metrics: [
@@ -77,7 +73,6 @@ export const projects = [
     index: '03',
     domain: 'EdTech',
     duration: '12 months',
-    isCurrent: false,
     stack: ['Playwright', 'TypeScript', 'Node.js', 'GitLab CI/CD', 'Allure', 'Workday APIs'],
     referenceKey: 'refIuQa',
     metrics: [
@@ -90,7 +85,6 @@ export const projects = [
     index: '04',
     domain: 'IoT / Smart Building',
     duration: '8 months',
-    isCurrent: false,
     stack: ['Laravel 9', 'PHP 8', 'Blade', 'InfluxDB', 'Node.js', 'REST APIs'],
     referenceKey: 'refBalt',
     metrics: [
@@ -103,7 +97,6 @@ export const projects = [
     index: '05',
     domain: 'IoT / MERN',
     duration: '14 months',
-    isCurrent: false,
     stack: ['React', 'Express.js', 'Node.js', 'MongoDB', 'REST APIs', 'IoT integration'],
     referenceKey: 'refParking',
     metrics: [

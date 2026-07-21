@@ -11,7 +11,7 @@ export function Education() {
   return (
     <section className="block" id="education">
       <div className="wrap">
-        <SectionHeader idx={t.education.idx} title={t.education.title} hint={t.education.hint} />
+        <SectionHeader idx={t.education.idx} title={t.education.title} />
 
         <div className="edu-grid reveal" ref={gridRef}>
           {educationEntries.map((entry) => {

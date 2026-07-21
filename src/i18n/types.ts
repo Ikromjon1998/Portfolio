@@ -30,6 +30,10 @@ export interface AiItem {
 }
 
 export interface Translations {
+  meta: {
+    title: string;
+    description: string;
+  };
   topbar: {
     available: string;
     location: string;
@@ -89,7 +93,6 @@ export interface Translations {
   education: {
     idx: string;
     title: string;
-    hint: string;
     entries: Record<EducationKey, EducationTranslation>;
     certsLabel: string;
     certs: Record<CertificationKey, string>;
@@ -98,6 +101,7 @@ export interface Translations {
     eyebrow: string;
     heading: string;
     desc: string;
+    mailSubject: string;
   };
   footer: {
     copyright: string;
@@ -110,11 +114,8 @@ export interface Translations {
     projectsTitle: string;
     educationTitle: string;
     languagesTitle: string;
-    contactTitle: string;
-    profileTitle: string;
     role: string;
     duration: string;
-    impact: string;
     stack: string;
   };
 }
