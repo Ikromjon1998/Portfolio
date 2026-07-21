@@ -23,6 +23,8 @@ export function DownloadCVButton({ variant = 'topbar' }: Props) {
       a.download = `Ikromjon-Ochilov-CV-${locale.toUpperCase()}.pdf`;
       a.click();
       URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('CV download failed:', error);
     } finally {
       setGenerating(false);
     }
@@ -32,7 +34,7 @@ export function DownloadCVButton({ variant = 'topbar' }: Props) {
     variant === 'contact' ? 'links-btn download-cv' : 'download-cv-topbar download-cv';
 
   return (
-    <button className={className} onClick={handleDownload} disabled={generating}>
+    <button className={className} onClick={() => void handleDownload()} disabled={generating}>
       <svg
         viewBox="0 0 24 24"
         width="15"

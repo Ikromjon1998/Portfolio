@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 
-type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark';
+
+const THEME_STORAGE_KEY = 'theme';
 
 function getInitialTheme(): Theme {
-  const stored = localStorage.getItem('theme');
+  const stored = localStorage.getItem(THEME_STORAGE_KEY);
   if (stored === 'light' || stored === 'dark') return stored;
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
   return 'light';
@@ -14,7 +16,7 @@ export function useDarkMode() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme]);
 
   const toggle = useCallback(() => {

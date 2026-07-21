@@ -1,5 +1,6 @@
 import { useTranslation } from '../i18n/useTranslation';
 import { personal } from '../data/personal';
+import { MultilineText } from './MultilineText';
 
 export function Stats() {
   const { t } = useTranslation();
@@ -7,19 +8,14 @@ export function Stats() {
   return (
     <section className="strip">
       <div className="wrap">
-        {personal.stats.map((stat, i) => (
-          <div className="stat" key={i}>
+        {personal.stats.map((stat) => (
+          <div className="stat" key={stat.key}>
             <div className="n">
               {stat.value}
               {stat.suffix && <em>{stat.suffix}</em>}
             </div>
             <div className="l">
-              {t.stats.labels[i].split('\n').map((line, j) => (
-                <span key={j}>
-                  {line}
-                  {j === 0 && <br />}
-                </span>
-              ))}
+              <MultilineText text={t.stats.labels[stat.key]} />
             </div>
           </div>
         ))}

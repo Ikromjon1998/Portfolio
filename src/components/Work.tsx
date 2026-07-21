@@ -1,6 +1,7 @@
-import { useTranslation } from '../i18n/useTranslation';
+import { getProjectTranslation, useTranslation } from '../i18n/useTranslation';
 import { projects, type MetricTrend, type Project } from '../data/projects';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { SectionHeader } from './SectionHeader';
 
 function ArrowUpIcon() {
   return (
@@ -27,7 +28,7 @@ function TrendIcon({ trend }: { trend: MetricTrend }) {
 function ProjectCard({ project }: { project: Project }) {
   const { t } = useTranslation();
   const ref = useScrollReveal<HTMLElement>();
-  const pt = t.work.projects[project.id];
+  const pt = getProjectTranslation(t, project.id);
 
   return (
     <article className="proj reveal" ref={ref}>
@@ -63,16 +64,11 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Work() {
   const { t } = useTranslation();
-  const headRef = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="block" id="work">
       <div className="wrap">
-        <div className="block-head reveal" ref={headRef}>
-          <span className="idx">{t.work.idx}</span>
-          <h2>{t.work.title}</h2>
-          <span className="hint">{t.work.hint}</span>
-        </div>
+        <SectionHeader idx={t.work.idx} title={t.work.title} hint={t.work.hint} />
         <div className="work">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />

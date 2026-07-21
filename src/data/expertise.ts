@@ -1,9 +1,10 @@
-export interface ExpertiseGroup {
+interface ExpertiseGroupShape {
+  /** Key into the localized `expertise.groups` map. */
   key: string;
-  tags: string[];
+  tags: readonly string[];
 }
 
-export const expertiseGroups: ExpertiseGroup[] = [
+export const expertiseGroups = [
   {
     key: 'backend',
     tags: [
@@ -47,4 +48,6 @@ export const expertiseGroups: ExpertiseGroup[] = [
       'Stakeholder-driven delivery',
     ],
   },
-];
+] as const satisfies readonly ExpertiseGroupShape[];
+
+export type ExpertiseGroupKey = (typeof expertiseGroups)[number]['key'];

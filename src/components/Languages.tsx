@@ -1,19 +1,16 @@
 import { useTranslation } from '../i18n/useTranslation';
 import { spokenLanguages } from '../data/languages';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { SectionHeader } from './SectionHeader';
 
 export function Languages() {
   const { t } = useTranslation();
-  const headRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="block" id="languages">
       <div className="wrap">
-        <div className="block-head reveal" ref={headRef}>
-          <span className="idx">{t.languages.idx}</span>
-          <h2>{t.languages.title}</h2>
-        </div>
+        <SectionHeader idx={t.languages.idx} title={t.languages.title} />
         <div className="lang-grid reveal" ref={gridRef}>
           {spokenLanguages.map((lang) => (
             <div className="lang" key={lang.key}>

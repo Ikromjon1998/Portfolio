@@ -1,7 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
-import { I18nContext, getInitialLocale, getTranslations } from './i18n/useTranslation';
-import type { Locale } from './i18n/types';
-import { useDarkMode } from './hooks/useDarkMode';
+import { I18nProvider } from './i18n/I18nProvider';
 import { TopBar } from './components/TopBar';
 import { Hero } from './components/Hero';
 import { Stats } from './components/Stats';
@@ -14,23 +11,9 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 export default function App() {
-  const [locale, setLocaleState] = useState<Locale>(getInitialLocale);
-  const { theme, toggle: toggleTheme } = useDarkMode();
-
-  const setLocale = useCallback((l: Locale) => {
-    setLocaleState(l);
-    localStorage.setItem('lang', l);
-    document.documentElement.lang = l;
-  }, []);
-
-  const i18nValue = useMemo(
-    () => ({ locale, t: getTranslations(locale), setLocale }),
-    [locale, setLocale]
-  );
-
   return (
-    <I18nContext.Provider value={i18nValue}>
-      <TopBar theme={theme} toggleTheme={toggleTheme} />
+    <I18nProvider>
+      <TopBar />
       <main>
         <Hero />
         <Stats />
@@ -42,6 +25,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </I18nContext.Provider>
+    </I18nProvider>
   );
 }

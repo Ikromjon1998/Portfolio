@@ -1,44 +1,42 @@
-import { render, screen } from '@testing-library/react';
-import type { ReactNode } from 'react';
+import { describe, expect, it } from 'vitest';
+import { screen } from '@testing-library/react';
 import { Work } from './Work';
-import { I18nContext, getTranslations } from '../i18n/useTranslation';
-import type { Locale } from '../i18n/types';
-
-function renderWork(locale: Locale) {
-  const value = { locale, t: getTranslations(locale), setLocale: () => {} };
-  const wrapper = ({ children }: { children: ReactNode }) => (
-    <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
-  );
-  return render(<Work />, { wrapper });
-}
+import { renderWithI18n } from '../test/i18n';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
 
 describe('Work', () => {
   it('renders every project title', () => {
-    renderWork('en');
-    expect(screen.getByText('B2B Healthcare Platform')).toBeInTheDocument();
-    expect(screen.getByText('Multi-Garage Parking Platform')).toBeInTheDocument();
+    renderWithI18n(<Work />);
+    for (const project of Object.values(en.work.projects)) {
+      expect(screen.getByText(project.title)).toBeInTheDocument();
+    }
   });
 
   it('joins metric labels to projects by id (English)', () => {
-    renderWork('en');
-    expect(screen.getByText('API latency −40%')).toBeInTheDocument();
-    expect(screen.getByText('100% on-time GDPR releases')).toBeInTheDocument();
+    renderWithI18n(<Work />);
+    expect(screen.getByText(en.work.projects.binschonda.metrics.apiLatency)).toBeInTheDocument();
+    expect(screen.getByText(en.work.projects.binschonda.metrics.gdpr)).toBeInTheDocument();
   });
 
   it('renders localized metric labels (German)', () => {
-    renderWork('de');
-    expect(screen.getByText('API-Latenz −40%')).toBeInTheDocument();
+    renderWithI18n(<Work />, 'de');
+    expect(screen.getByText(de.work.projects.binschonda.metrics.apiLatency)).toBeInTheDocument();
   });
 
   it('shows a trend arrow for directional metrics and none for neutral ones', () => {
-    renderWork('en');
+    renderWithI18n(<Work />);
 
-    const upMetric = screen.getByText('API latency −40%').closest('span');
+    const upMetric = screen
+      .getByText(en.work.projects.binschonda.metrics.apiLatency)
+      .closest('span');
     expect(upMetric).not.toBeNull();
     expect(upMetric?.querySelector('svg')).toBeInTheDocument();
     expect(upMetric).not.toHaveClass('neutral');
 
-    const neutralMetric = screen.getByText('100% on-time GDPR releases').closest('span');
+    const neutralMetric = screen
+      .getByText(en.work.projects.binschonda.metrics.gdpr)
+      .closest('span');
     expect(neutralMetric).toHaveClass('neutral');
     expect(neutralMetric?.querySelector('svg')).toBeNull();
   });

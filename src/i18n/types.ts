@@ -1,10 +1,19 @@
-export type Locale = 'en' | 'de';
+import type { MetricIdOf, ProjectId, ReferenceKey } from '../data/projects';
+import type { ExpertiseGroupKey } from '../data/expertise';
+import type { SpokenLanguageKey } from '../data/languages';
+import type { CertificationKey, EducationKey } from '../data/education';
+import type { StatKey } from '../data/personal';
 
-export interface ProjectTranslation {
+export const locales = ['en', 'de'] as const;
+
+export type Locale = (typeof locales)[number];
+
+export interface ProjectTranslation<M extends string> {
   title: string;
   role: string;
   desc: string;
-  metrics: Record<string, string>;
+  /** One localized label per metric id declared in `src/data/projects.ts`. */
+  metrics: Record<M, string>;
 }
 
 export interface EducationTranslation {
@@ -27,7 +36,7 @@ export interface Translations {
   };
   hero: {
     eyebrow: string;
-    headingLines: string[];
+    headingLines: readonly string[];
     lede: string;
     ledeBold1: string;
     ledeBold2: string;
@@ -49,41 +58,41 @@ export interface Translations {
     fieldStatus: string;
   };
   stats: {
-    labels: string[];
+    labels: Record<StatKey, string>;
   };
   expertise: {
     idx: string;
     title: string;
     hint: string;
-    groups: Record<string, string>;
+    groups: Record<ExpertiseGroupKey, string>;
   };
   work: {
     idx: string;
     title: string;
     hint: string;
-    projects: Record<string, ProjectTranslation>;
-    references: Record<string, string>;
+    projects: { [P in ProjectId]: ProjectTranslation<MetricIdOf<P>> };
+    references: Record<ReferenceKey, string>;
   };
   ai: {
     eyebrow: string;
     heading: string;
     headingHighlight: string;
     desc: string;
-    items: AiItem[];
+    items: readonly AiItem[];
   };
   languages: {
     idx: string;
     title: string;
-    names: Record<string, string>;
-    levels: Record<string, string>;
+    names: Record<SpokenLanguageKey, string>;
+    levels: Record<SpokenLanguageKey, string>;
   };
   education: {
     idx: string;
     title: string;
     hint: string;
-    entries: Record<string, EducationTranslation>;
+    entries: Record<EducationKey, EducationTranslation>;
     certsLabel: string;
-    certs: Record<string, string>;
+    certs: Record<CertificationKey, string>;
   };
   contact: {
     eyebrow: string;

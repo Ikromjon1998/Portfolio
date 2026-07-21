@@ -1,20 +1,16 @@
 import { useTranslation } from '../i18n/useTranslation';
 import { expertiseGroups } from '../data/expertise';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { SectionHeader } from './SectionHeader';
 
 export function Expertise() {
   const { t } = useTranslation();
-  const headRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="block" id="expertise">
       <div className="wrap">
-        <div className="block-head reveal" ref={headRef}>
-          <span className="idx">{t.expertise.idx}</span>
-          <h2>{t.expertise.title}</h2>
-          <span className="hint">{t.expertise.hint}</span>
-        </div>
+        <SectionHeader idx={t.expertise.idx} title={t.expertise.title} hint={t.expertise.hint} />
         <div className="exp-grid reveal" ref={gridRef}>
           {expertiseGroups.map((group) => (
             <div className="exp" key={group.key}>

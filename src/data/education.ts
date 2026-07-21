@@ -1,7 +1,7 @@
-export interface EducationEntry {
-  key: string;
-}
+export const educationEntries = [{ key: 'polito' }, { key: 'arden' }] as const;
 
-export const educationEntries: EducationEntry[] = [{ key: 'polito' }, { key: 'arden' }];
+export type EducationKey = (typeof educationEntries)[number]['key'];
 
-export const certifications: string[] = ['telcB1', 'awsCloud'];
+export const certifications = ['telcB1', 'awsCloud'] as const;
+
+export type CertificationKey = (typeof certifications)[number];

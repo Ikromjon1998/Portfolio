@@ -1,21 +1,17 @@
 import { useTranslation } from '../i18n/useTranslation';
 import { educationEntries, certifications } from '../data/education';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { SectionHeader } from './SectionHeader';
 
 export function Education() {
   const { t } = useTranslation();
-  const headRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useScrollReveal<HTMLDivElement>();
   const certsRef = useScrollReveal<HTMLDivElement>();
 
   return (
     <section className="block" id="education">
       <div className="wrap">
-        <div className="block-head reveal" ref={headRef}>
-          <span className="idx">{t.education.idx}</span>
-          <h2>{t.education.title}</h2>
-          <span className="hint">{t.education.hint}</span>
-        </div>
+        <SectionHeader idx={t.education.idx} title={t.education.title} hint={t.education.hint} />
 
         <div className="edu-grid reveal" ref={gridRef}>
           {educationEntries.map((entry) => {

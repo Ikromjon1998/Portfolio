@@ -1,25 +1,48 @@
 import { createContext, useContext } from 'react';
-import type { Locale, Translations } from './types';
+import { locales, type Locale, type Translations } from './types';
+import type { MetricId, ProjectId } from '../data/projects';
 import { en } from './en';
 import { de } from './de';
 
+export const LANG_STORAGE_KEY = 'lang';
+
 const translations: Record<Locale, Translations> = { en, de };
+
+function isLocale(value: string): value is Locale {
+  return (locales as readonly string[]).includes(value);
+}
 
 export function getTranslations(locale: Locale): Translations {
   return translations[locale];
 }
 
 export function getInitialLocale(): Locale {
-  const stored = localStorage.getItem('lang');
-  if (stored === 'en' || stored === 'de') return stored;
+  const stored = localStorage.getItem(LANG_STORAGE_KEY);
+  if (stored !== null && isLocale(stored)) return stored;
   if (navigator.language.startsWith('de')) return 'de';
   return 'en';
 }
 
-interface I18nContextValue {
+/**
+ * A project's copy as seen from a dynamic `ProjectId`. The per-project metric
+ * checking lives in the bundle types; across the union of projects a metric
+ * lookup is honestly `string | undefined`.
+ */
+export interface ProjectCopy {
+  title: string;
+  role: string;
+  desc: string;
+  metrics: Partial<Record<MetricId, string>>;
+}
+
+export function getProjectTranslation(t: Translations, id: ProjectId): ProjectCopy {
+  return t.work.projects[id];
+}
+
+export interface I18nContextValue {
   locale: Locale;
   t: Translations;
-  setLocale: (l: Locale) => void;
+  setLocale: (locale: Locale) => void;
 }
 
 export const I18nContext = createContext<I18nContextValue | null>(null);

@@ -1,6 +1,6 @@
 import type { Translations } from './types';
 
-export const de: Translations = {
+export const de = {
   topbar: {
     available: 'Verfügbar für Projekte',
     location: '· Berlin, DE',
@@ -29,12 +29,12 @@ export const de: Translations = {
     status: 'Offen für Freelance-Projekte',
   },
   stats: {
-    labels: [
-      'Jahre Erfahrung mit\nProduktionssystemen',
-      'Plattformen ausgeliefert\nin 3 Domänen',
-      'Nutzer bedient\n(Studienverträge)',
-      'Latenz-Reduktion\ndurch Query-Optimierung',
-    ],
+    labels: {
+      stat1: 'Jahre Erfahrung mit\nProduktionssystemen',
+      stat2: 'Plattformen ausgeliefert\nin 3 Domänen',
+      stat3: 'Nutzer bedient\n(Studienverträge)',
+      stat4: 'Latenz-Reduktion\ndurch Query-Optimierung',
+    },
   },
   expertise: {
     idx: '/01',
@@ -199,4 +199,4 @@ export const de: Translations = {
     impact: 'Ergebnis',
     stack: 'Stack',
   },
-};
+} satisfies Translations;

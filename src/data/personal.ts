@@ -17,3 +17,5 @@ export const personal = {
     { value: '40', suffix: '%', key: 'stat4' },
   ],
 } as const;
+
+export type StatKey = (typeof personal.stats)[number]['key'];

@@ -1,4 +1,5 @@
 import { useTranslation } from '../i18n/useTranslation';
+import { interpolate } from '../i18n/interpolate';
 import { personal } from '../data/personal';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -7,8 +8,6 @@ export function Hero() {
   const revealLeft = useScrollReveal<HTMLDivElement>();
   const revealRight = useScrollReveal<HTMLDivElement>();
 
-  const ledeParts = t.hero.lede.split(/\{b[12]\}/);
-
   return (
     <section className="hero">
       <div className="wrap hero-grid">
@@ -16,18 +15,17 @@ export function Hero() {
           <span className="eyebrow">{t.hero.eyebrow}</span>
           <h1>
             {t.hero.headingLines.map((line, i) => (
-              <span key={i}>
+              <span key={line}>
                 {line}
                 {i < t.hero.headingLines.length - 1 && <br />}
               </span>
             ))}
           </h1>
           <p className="lede">
-            {ledeParts[0]}
-            <b>{t.hero.ledeBold1}</b>
-            {ledeParts[1]}
-            <b>{t.hero.ledeBold2}</b>
-            {ledeParts[2]}
+            {interpolate(t.hero.lede, {
+              b1: <b>{t.hero.ledeBold1}</b>,
+              b2: <b>{t.hero.ledeBold2}</b>,
+            })}
           </p>
           <p className="sub">{t.hero.sub}</p>
           <div className="cta-row">

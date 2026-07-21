@@ -1,24 +1,26 @@
 export type MetricTrend = 'up' | 'down' | 'neutral';
 
-export interface ProjectMetric {
+interface ProjectMetricShape {
   /** Stable id used to look up the localized label in the translation files. */
   id: string;
   /** Direction of the impact arrow; `neutral` renders no arrow. */
   trend: MetricTrend;
 }
 
-export interface Project {
+interface ProjectShape {
+  /** Stable id joining this project to its localized copy in the translation bundles. */
   id: string;
   index: string;
   domain: string;
   duration: string;
   isCurrent: boolean;
-  stack: string[];
+  stack: readonly string[];
+  /** Key into the localized `work.references` map. */
   referenceKey: string;
-  metrics: ProjectMetric[];
+  metrics: readonly ProjectMetricShape[];
 }
 
-export const projects: Project[] = [
+export const projects = [
   {
     id: 'gradar',
     index: '00 · current',
@@ -109,4 +111,10 @@ export const projects: Project[] = [
       { id: 'gateIntegration', trend: 'neutral' },
     ],
   },
-];
+] as const satisfies readonly ProjectShape[];
+
+export type Project = (typeof projects)[number];
+export type ProjectId = Project['id'];
+export type ReferenceKey = Project['referenceKey'];
+export type MetricId = Project['metrics'][number]['id'];
+export type MetricIdOf<P extends ProjectId> = Extract<Project, { id: P }>['metrics'][number]['id'];

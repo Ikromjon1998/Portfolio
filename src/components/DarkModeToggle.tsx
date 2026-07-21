@@ -1,9 +1,8 @@
-interface Props {
-  theme: 'light' | 'dark';
-  toggle: () => void;
-}
+import { useDarkMode } from '../hooks/useDarkMode';
 
-export function DarkModeToggle({ theme, toggle }: Props) {
+export function DarkModeToggle() {
+  const { theme, toggle } = useDarkMode();
+
   return (
     <button
       className="dark-toggle"

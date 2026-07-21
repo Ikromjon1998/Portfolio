@@ -1,6 +1,6 @@
 import type { Translations } from './types';
 
-export const en: Translations = {
+export const en = {
   topbar: {
     available: 'Available for projects',
     location: '· Berlin, DE',
@@ -29,12 +29,12 @@ export const en: Translations = {
     status: 'Open to freelance projects',
   },
   stats: {
-    labels: [
-      'years building\nproduction systems',
-      'platforms shipped\nacross 3 domains',
-      'users served\n(student contracts)',
-      'peak latency cut\nvia query tuning',
-    ],
+    labels: {
+      stat1: 'years building\nproduction systems',
+      stat2: 'platforms shipped\nacross 3 domains',
+      stat3: 'users served\n(student contracts)',
+      stat4: 'peak latency cut\nvia query tuning',
+    },
   },
   expertise: {
     idx: '/01',
@@ -196,4 +196,4 @@ export const en: Translations = {
     impact: 'Impact',
     stack: 'Stack',
   },
-};
+} satisfies Translations;

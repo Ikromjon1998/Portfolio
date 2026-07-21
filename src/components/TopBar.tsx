@@ -3,12 +3,7 @@ import { LanguageToggle } from './LanguageToggle';
 import { DarkModeToggle } from './DarkModeToggle';
 import { DownloadCVButton } from './DownloadCVButton';
 
-interface Props {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-}
-
-export function TopBar({ theme, toggleTheme }: Props) {
+export function TopBar() {
   const { t } = useTranslation();
 
   return (
@@ -26,7 +21,7 @@ export function TopBar({ theme, toggleTheme }: Props) {
           </div>
           <DownloadCVButton variant="topbar" />
           <LanguageToggle />
-          <DarkModeToggle theme={theme} toggle={toggleTheme} />
+          <DarkModeToggle />
         </div>
       </div>
     </header>

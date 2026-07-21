@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/vitest';
 import { afterEach, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
+import { MockIntersectionObserver, stubMatchMedia } from './mocks';
 
 const store = new Map<string, string>();
 const localStorageMock: Storage = {
@@ -8,7 +9,7 @@ const localStorageMock: Storage = {
     return store.size;
   },
   clear: () => store.clear(),
-  getItem: (key) => (store.has(key) ? store.get(key)! : null),
+  getItem: (key) => store.get(key) ?? null,
   key: (index) => Array.from(store.keys())[index] ?? null,
   removeItem: (key) => {
     store.delete(key);
@@ -19,29 +20,15 @@ const localStorageMock: Storage = {
 };
 vi.stubGlobal('localStorage', localStorageMock);
 
-window.matchMedia = vi.fn().mockImplementation((query: string) => ({
-  matches: false,
-  media: query,
-  onchange: null,
-  addEventListener: vi.fn(),
-  removeEventListener: vi.fn(),
-  addListener: vi.fn(),
-  removeListener: vi.fn(),
-  dispatchEvent: vi.fn(),
-}));
-
-class MockIntersectionObserver {
-  observe = vi.fn();
-  unobserve = vi.fn();
-  disconnect = vi.fn();
-  takeRecords = vi.fn(() => []);
-  root = null;
-  rootMargin = '';
-  thresholds = [];
-}
+stubMatchMedia(false);
 vi.stubGlobal('IntersectionObserver', MockIntersectionObserver);
 
 afterEach(() => {
   cleanup();
   store.clear();
+  stubMatchMedia(false);
+  MockIntersectionObserver.reset();
+  document.documentElement.removeAttribute('data-theme');
+  document.documentElement.removeAttribute('lang');
+  vi.restoreAllMocks();
 });

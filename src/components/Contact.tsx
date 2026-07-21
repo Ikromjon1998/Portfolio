@@ -2,6 +2,7 @@ import { useTranslation } from '../i18n/useTranslation';
 import { personal } from '../data/personal';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { DownloadCVButton } from './DownloadCVButton';
+import { MultilineText } from './MultilineText';
 
 export function Contact() {
   const { t } = useTranslation();
@@ -12,12 +13,7 @@ export function Contact() {
       <div className="wrap reveal" ref={ref}>
         <span className="eyebrow">{t.contact.eyebrow}</span>
         <h2>
-          {t.contact.heading.split('\n').map((line, i) => (
-            <span key={i}>
-              {line}
-              {i === 0 && <br />}
-            </span>
-          ))}
+          <MultilineText text={t.contact.heading} />
         </h2>
         <p>{t.contact.desc}</p>
         <div className="links">

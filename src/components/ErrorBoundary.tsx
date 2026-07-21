@@ -2,18 +2,18 @@ import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
-  fallback?: ReactNode;
+  fallback?: ReactNode | ((error: Error) => ReactNode);
 }
 
 interface State {
-  hasError: boolean;
+  error: Error | null;
 }
 
 export class ErrorBoundary extends Component<Props, State> {
-  state: State = { hasError: false };
+  state: State = { error: null };
 
-  static getDerivedStateFromError(): State {
-    return { hasError: true };
+  static getDerivedStateFromError(error: Error): State {
+    return { error };
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
@@ -23,15 +23,19 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   render(): ReactNode {
-    if (this.state.hasError) {
-      return (
-        this.props.fallback ?? (
-          <div role="alert" style={{ padding: '2rem', textAlign: 'center' }}>
-            <p>Something went wrong. Please refresh the page.</p>
-          </div>
-        )
-      );
+    const { error } = this.state;
+    if (error === null) {
+      return this.props.children;
     }
-    return this.props.children;
+
+    const { fallback } = this.props;
+    if (fallback !== undefined) {
+      return typeof fallback === 'function' ? fallback(error) : fallback;
+    }
+    return (
+      <div role="alert" style={{ padding: '2rem', textAlign: 'center' }}>
+        <p>Something went wrong. Please refresh the page.</p>
+      </div>
+    );
   }
 }
