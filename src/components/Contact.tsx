@@ -17,7 +17,10 @@ export function Contact() {
         </h2>
         <p>{t.contact.desc}</p>
         <div className="links">
-          <a className="primary" href={`mailto:${personal.email}`}>
+          <a
+            className="primary"
+            href={`mailto:${personal.email}?subject=${encodeURIComponent(t.contact.mailSubject)}`}
+          >
             <svg
               viewBox="0 0 24 24"
               width="15"

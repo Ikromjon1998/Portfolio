@@ -1,6 +1,11 @@
 import type { Translations } from './types';
 
 export const en = {
+  meta: {
+    title: 'Ikromjon Ochilov — Senior Full-Stack Engineer · Berlin',
+    description:
+      'Senior Full-Stack Engineer in Berlin — Laravel, React/TypeScript, PostgreSQL and production LLM integration. Available for freelance projects.',
+  },
   topbar: {
     available: 'Available for projects',
     location: '· Berlin, DE',
@@ -151,7 +156,6 @@ export const en = {
   education: {
     idx: '/04',
     title: 'Education & certifications',
-    hint: '',
     entries: {
       polito: {
         year: 'Sep 2016 – Sep 2020',
@@ -176,9 +180,10 @@ export const en = {
     eyebrow: 'Open for freelance projects',
     heading: 'Have a system that\nneeds building?',
     desc: "Defined scope, delivered remotely on evenings and weekends. Tell me what you need shipped — I'll tell you honestly whether I'm the right fit.",
+    mailSubject: 'Project inquiry',
   },
   footer: {
-    copyright: '© 2026 Ikromjon Ochilov — Berlin',
+    copyright: 'Ikromjon Ochilov — Berlin',
     tagline: 'Senior Full-Stack Engineer · Laravel · React · AI',
   },
   cv: {
@@ -189,11 +194,8 @@ export const en = {
     projectsTitle: 'Selected Projects',
     educationTitle: 'Education & Certifications',
     languagesTitle: 'Languages',
-    contactTitle: 'Contact',
-    profileTitle: 'Profile',
     role: 'Role',
     duration: 'Duration',
-    impact: 'Impact',
     stack: 'Stack',
   },
 } satisfies Translations;
