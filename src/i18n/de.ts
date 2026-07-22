@@ -160,6 +160,10 @@ export const de = {
         title: 'NativePHP · Document Scanner',
         desc: 'Dokumentenscanner für NativePHP Mobile mit Kantenerkennung, Zuschnitt und Perspektivkorrektur über native Kamera-APIs.',
       },
+      nativeSocialAuth: {
+        title: 'NativePHP · Social Auth',
+        desc: 'Natives Apple Sign-In und Google Sign-In für NativePHP-Mobile-Apps — ausgeliefert und gepflegt als kommerzielles Plugin.',
+      },
       vocabAssistant: {
         title: 'German Vocab Assistant',
         desc: 'KI-gestützter Assistent für deutschen Wortschatz in TypeScript — ein LLM-Feature als kleines, vollständiges Produkt.',

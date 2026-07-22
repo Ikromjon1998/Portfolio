@@ -18,6 +18,11 @@ export const openSourceRepos = [
     tags: ['PHP', 'NativePHP Mobile', 'Native camera APIs'],
   },
   {
+    key: 'nativeSocialAuth',
+    repo: 'https://github.com/Ikromjon1998/nativephp-mobile-social-auth',
+    tags: ['PHP', 'NativePHP Mobile', 'Commercial plugin'],
+  },
+  {
     key: 'vocabAssistant',
     repo: 'https://github.com/Ikromjon1998/german-vocab-assistant',
     demo: 'https://german-vocab-assistant.vercel.app',
