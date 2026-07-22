@@ -166,6 +166,19 @@ export const styles = StyleSheet.create({
     color: palette.ink3,
     marginTop: 4,
   },
+  ossItem: {
+    fontSize: 8.5,
+    color: palette.ink2,
+    marginBottom: 3,
+    lineHeight: 1.4,
+  },
+  ossName: {
+    fontFamily: 'Space Grotesk',
+    fontSize: 9,
+    fontWeight: 600,
+    color: palette.ink,
+    textDecoration: 'none',
+  },
   eduEntry: {
     marginBottom: 6,
   },

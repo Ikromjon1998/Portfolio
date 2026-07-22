@@ -5,6 +5,7 @@ import { getProjectTranslation, getTranslations } from '../i18n/useTranslation';
 import { personal } from '../data/personal';
 import { projects } from '../data/projects';
 import { expertiseGroups } from '../data/expertise';
+import { openSourceRepos } from '../data/openSource';
 import { spokenLanguages } from '../data/languages';
 import { educationEntries, certifications } from '../data/education';
 import { styles as s } from './styles';
@@ -88,6 +89,26 @@ function CVProjects({ t }: { t: Translations }) {
   );
 }
 
+function CVOpenSource({ t }: { t: Translations }) {
+  return (
+    <>
+      <Text style={s.sectionTitle}>{t.cv.openSourceTitle}</Text>
+      {openSourceRepos.map((repo) => {
+        const item = t.openSource.items[repo.key];
+        return (
+          <Text key={repo.key} style={s.ossItem}>
+            <Link src={repo.repo} style={s.ossName}>
+              {item.title}
+            </Link>
+            {' — '}
+            {item.desc}
+          </Text>
+        );
+      })}
+    </>
+  );
+}
+
 function CVEducation({ t }: { t: Translations }) {
   return (
     <>
@@ -143,6 +164,7 @@ export function CVDocument({ locale }: Props) {
         <Text style={s.summary}>{t.cv.summary}</Text>
         <CVSkills t={t} />
         <CVProjects t={t} />
+        <CVOpenSource t={t} />
         <CVEducation t={t} />
         <CVLanguages t={t} />
       </Page>

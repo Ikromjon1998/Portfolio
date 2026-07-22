@@ -2,6 +2,7 @@ import type { MetricIdOf, ProjectId, ReferenceKey } from '../data/projects';
 import type { ExpertiseGroupKey } from '../data/expertise';
 import type { SpokenLanguageKey } from '../data/languages';
 import type { CertificationKey, EducationKey } from '../data/education';
+import type { OpenSourceKey } from '../data/openSource';
 import type { StatKey } from '../data/personal';
 
 export const locales = ['en', 'de'] as const;
@@ -25,6 +26,11 @@ export interface EducationTranslation {
 
 export interface AiItem {
   icon: string;
+  title: string;
+  desc: string;
+}
+
+export interface OpenSourceItem {
   title: string;
   desc: string;
 }
@@ -84,6 +90,14 @@ export interface Translations {
     desc: string;
     items: readonly AiItem[];
   };
+  openSource: {
+    idx: string;
+    title: string;
+    hint: string;
+    repoLabel: string;
+    demoLabel: string;
+    items: Record<OpenSourceKey, OpenSourceItem>;
+  };
   languages: {
     idx: string;
     title: string;
@@ -112,6 +126,7 @@ export interface Translations {
     summary: string;
     skillsTitle: string;
     projectsTitle: string;
+    openSourceTitle: string;
     educationTitle: string;
     languagesTitle: string;
     role: string;
