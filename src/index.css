@@ -42,6 +42,12 @@
 [data-theme='dark'] .certs .row span {
   background: var(--paper-2);
 }
+[data-theme='dark'] .stat {
+  border-left-color: rgba(21, 23, 28, 0.14);
+}
+[data-theme='dark'] .stat .l {
+  color: rgba(21, 23, 28, 0.62);
+}
 [data-theme='dark'] ::selection {
   background: var(--cobalt);
   color: #fff;
