@@ -142,8 +142,33 @@ export const en = {
       },
     ],
   },
-  languages: {
+  openSource: {
     idx: '/03',
+    title: 'Open source',
+    hint: 'plugins & packages',
+    repoLabel: 'View on GitHub',
+    demoLabel: 'Live demo',
+    items: {
+      nativeNotifications: {
+        title: 'NativePHP · Local Notifications',
+        desc: 'Plugin for scheduling and managing local notifications in NativePHP mobile apps — no Firebase required.',
+      },
+      nativeScanner: {
+        title: 'NativePHP · Document Scanner',
+        desc: 'Document scanning for NativePHP Mobile with edge detection, cropping and perspective correction via native camera APIs.',
+      },
+      vocabAssistant: {
+        title: 'German Vocab Assistant',
+        desc: 'AI-powered German vocabulary assistant in TypeScript — an LLM feature shipped as a small, complete product.',
+      },
+      licensePlates: {
+        title: 'Laravel Kfz-Kennzeichen Validation',
+        desc: 'Laravel validation rule for German vehicle license plates — a focused package for the German market.',
+      },
+    },
+  },
+  languages: {
+    idx: '/04',
     title: 'Languages',
     names: { uzbek: 'Uzbek', russian: 'Russian', english: 'English', german: 'German' },
     levels: {
@@ -154,7 +179,7 @@ export const en = {
     },
   },
   education: {
-    idx: '/04',
+    idx: '/05',
     title: 'Education & certifications',
     entries: {
       polito: {
@@ -192,6 +217,7 @@ export const en = {
       'Senior Full-Stack Engineer with 6+ years building regulated, data-heavy platforms across healthcare, EdTech, and IoT. Backend-leaning (Laravel/PHP, PostgreSQL) with strong React/TypeScript frontend skills and a growing focus on production LLM integration (Anthropic, OpenAI, RAG). Based in Berlin with an unrestricted work permit.',
     skillsTitle: 'Technical Skills',
     projectsTitle: 'Selected Projects',
+    openSourceTitle: 'Open Source',
     educationTitle: 'Education & Certifications',
     languagesTitle: 'Languages',
     role: 'Role',

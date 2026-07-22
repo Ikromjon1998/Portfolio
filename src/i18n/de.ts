@@ -145,8 +145,33 @@ export const de = {
       },
     ],
   },
-  languages: {
+  openSource: {
     idx: '/03',
+    title: 'Open Source',
+    hint: 'Plugins & Pakete',
+    repoLabel: 'Auf GitHub ansehen',
+    demoLabel: 'Live-Demo',
+    items: {
+      nativeNotifications: {
+        title: 'NativePHP · Local Notifications',
+        desc: 'Plugin zum Planen und Verwalten lokaler Benachrichtigungen in NativePHP-Mobile-Apps — ganz ohne Firebase.',
+      },
+      nativeScanner: {
+        title: 'NativePHP · Document Scanner',
+        desc: 'Dokumentenscanner für NativePHP Mobile mit Kantenerkennung, Zuschnitt und Perspektivkorrektur über native Kamera-APIs.',
+      },
+      vocabAssistant: {
+        title: 'German Vocab Assistant',
+        desc: 'KI-gestützter Assistent für deutschen Wortschatz in TypeScript — ein LLM-Feature als kleines, vollständiges Produkt.',
+      },
+      licensePlates: {
+        title: 'Laravel Kfz-Kennzeichen-Validierung',
+        desc: 'Laravel-Validierungsregel für deutsche Kfz-Kennzeichen — ein fokussiertes Paket für den deutschen Markt.',
+      },
+    },
+  },
+  languages: {
+    idx: '/04',
     title: 'Sprachen',
     names: { uzbek: 'Usbekisch', russian: 'Russisch', english: 'Englisch', german: 'Deutsch' },
     levels: {
@@ -157,7 +182,7 @@ export const de = {
     },
   },
   education: {
-    idx: '/04',
+    idx: '/05',
     title: 'Ausbildung & Zertifikate',
     entries: {
       polito: {
@@ -195,6 +220,7 @@ export const de = {
       'Senior Full-Stack Engineer mit 6+ Jahren Erfahrung im Aufbau regulierter, datenintensiver Plattformen in Healthcare, EdTech und IoT. Backend-fokussiert (Laravel/PHP, PostgreSQL) mit starken React/TypeScript-Frontend-Kenntnissen und wachsendem Fokus auf produktive LLM-Integration (Anthropic, OpenAI, RAG). Ansässig in Berlin mit unbefristeter Aufenthaltserlaubnis.',
     skillsTitle: 'Technische Fähigkeiten',
     projectsTitle: 'Ausgewählte Projekte',
+    openSourceTitle: 'Open Source',
     educationTitle: 'Ausbildung & Zertifikate',
     languagesTitle: 'Sprachen',
     role: 'Rolle',

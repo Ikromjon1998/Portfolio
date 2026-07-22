@@ -5,6 +5,7 @@ import { Stats } from './components/Stats';
 import { Expertise } from './components/Expertise';
 import { Work } from './components/Work';
 import { AI } from './components/AI';
+import { OpenSource } from './components/OpenSource';
 import { Languages } from './components/Languages';
 import { Education } from './components/Education';
 import { Contact } from './components/Contact';
@@ -20,6 +21,7 @@ export default function App() {
         <Expertise />
         <Work />
         <AI />
+        <OpenSource />
         <Languages />
         <Education />
         <Contact />

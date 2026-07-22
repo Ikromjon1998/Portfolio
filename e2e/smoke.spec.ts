@@ -38,7 +38,15 @@ test.describe('portfolio smoke', () => {
 
   test('every section renders', async ({ page }) => {
     await page.goto('/');
-    for (const id of ['expertise', 'work', 'ai', 'languages', 'education', 'contact']) {
+    for (const id of [
+      'expertise',
+      'work',
+      'ai',
+      'open-source',
+      'languages',
+      'education',
+      'contact',
+    ]) {
       await expect(page.locator(`#${id}`)).toBeAttached();
     }
   });
