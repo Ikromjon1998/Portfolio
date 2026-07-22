@@ -50,6 +50,7 @@ npm run test:e2e      # end-to-end smoke tests (Playwright, needs `npx playwrigh
 - **Type-safe i18n**: Translation keys derived from the data files — a typo'd key is a compile error
 - **Self-hosted fonts**: No Google Fonts CDN requests (GDPR-friendly)
 - **SEO**: Meta description, Open Graph, JSON-LD person schema, canonical URL, sitemap
+- **AI-agent friendly**: `/llms.txt` and `/resume.json` (JSON Resume schema), generated at build time from the same typed data the site renders
 - **Print**: `@media print` stylesheet hides nav/toggles, forces black-on-white
 - **Accessible**: Keyboard focus rings, `prefers-reduced-motion`, semantic HTML
 - **Responsive**: Tested down to 360px
