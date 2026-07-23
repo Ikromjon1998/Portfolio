@@ -31,7 +31,6 @@ describe('getInitialLocale', () => {
 
 describe('useTranslation', () => {
   it('throws a clear error when used outside the provider', () => {
-    // The throw is expected; keep React's error reporting out of the test output.
     vi.spyOn(console, 'error').mockImplementation(() => {});
     expect(() => renderHook(() => useTranslation())).toThrow(/I18nContext.Provider/);
   });

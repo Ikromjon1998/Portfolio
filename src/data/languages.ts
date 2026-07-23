@@ -1,7 +1,5 @@
 interface SpokenLanguageShape {
-  /** Key into the localized `languages.names` / `languages.levels` maps. */
   key: string;
-  /** Proficiency, as a 0-100 meter width. */
   meter: number;
 }
 

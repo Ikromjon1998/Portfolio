@@ -39,8 +39,12 @@ npm run preview   # preview the production build locally
 ```bash
 npm test              # unit tests (Vitest + Testing Library)
 npm run test:coverage # unit tests with coverage
-npm run test:e2e      # end-to-end smoke tests (Playwright, needs `npx playwright install chromium` once)
+npm run test:e2e      # Playwright: smoke, axe accessibility scan (light+dark), visual regression
+npm run og:image      # regenerate the Open Graph card (public/og.png)
 ```
+
+Visual-regression baselines are rendered on macOS and compared locally; CI covers the
+same class of bug cross-platform through the axe color-contrast checks.
 
 ## Features
 
@@ -51,6 +55,7 @@ npm run test:e2e      # end-to-end smoke tests (Playwright, needs `npx playwrigh
 - **Self-hosted fonts**: No Google Fonts CDN requests (GDPR-friendly)
 - **SEO**: Meta description, Open Graph, JSON-LD person schema, canonical URL, sitemap
 - **Print**: `@media print` stylesheet hides nav/toggles, forces black-on-white
-- **Accessible**: Keyboard focus rings, `prefers-reduced-motion`, semantic HTML
+- **Accessible**: WCAG 2.1 AA — axe-verified in light and dark mode on every push, keyboard focus rings, `prefers-reduced-motion`, semantic HTML
+- **Security headers**: CSP, HSTS, nosniff, frame-ancestors, referrer and permissions policies
 - **Responsive**: Tested down to 360px
 - **CI**: Typecheck, lint, format check, unit tests, build, and Playwright e2e on every push

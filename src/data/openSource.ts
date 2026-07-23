@@ -1,5 +1,4 @@
 interface OpenSourceRepoShape {
-  /** Key into the localized `openSource.items` map. */
   key: string;
   repo: string;
   demo?: string;

@@ -23,11 +23,6 @@ export function getInitialLocale(): Locale {
   return 'en';
 }
 
-/**
- * A project's copy as seen from a dynamic `ProjectId`. The per-project metric
- * checking lives in the bundle types; across the union of projects a metric
- * lookup is honestly `string | undefined`.
- */
 export interface ProjectCopy {
   title: string;
   role: string;

@@ -1,20 +1,16 @@
 export type MetricTrend = 'up' | 'down' | 'neutral';
 
 interface ProjectMetricShape {
-  /** Stable id used to look up the localized label in the translation files. */
   id: string;
-  /** Direction of the impact arrow; `neutral` renders no arrow. */
   trend: MetricTrend;
 }
 
 interface ProjectShape {
-  /** Stable id joining this project to its localized copy in the translation bundles. */
   id: string;
   index: string;
   domain: string;
   duration: string;
   stack: readonly string[];
-  /** Key into the localized `work.references` map. */
   referenceKey: string;
   metrics: readonly ProjectMetricShape[];
 }
