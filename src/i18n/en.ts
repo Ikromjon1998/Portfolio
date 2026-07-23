@@ -215,6 +215,16 @@ export const en = {
     heading: 'Have a system that\nneeds building?',
     desc: "Defined scope, delivered remotely on evenings and weekends. Tell me what you need shipped — I'll tell you honestly whether I'm the right fit.",
     mailSubject: 'Project inquiry',
+    form: {
+      title: 'Or write to me right here',
+      name: 'Name',
+      email: 'Email',
+      message: 'What do you need built?',
+      send: 'Send message',
+      sending: 'Sending…',
+      success: "Thanks — your message is on its way. I'll reply within a day.",
+      error: 'Something went wrong. Please email me directly instead.',
+    },
   },
   footer: {
     copyright: 'Ikromjon Ochilov — Berlin',

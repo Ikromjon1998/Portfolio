@@ -218,6 +218,16 @@ export const de = {
     heading: 'Ein System, das\ngebaut werden muss?',
     desc: 'Klarer Scope, remote geliefert an Abenden und Wochenenden. Sagen Sie mir, was Sie brauchen — ich sage Ihnen ehrlich, ob ich der Richtige bin.',
     mailSubject: 'Projektanfrage',
+    form: {
+      title: 'Oder schreiben Sie mir direkt hier',
+      name: 'Name',
+      email: 'E-Mail',
+      message: 'Was soll gebaut werden?',
+      send: 'Nachricht senden',
+      sending: 'Wird gesendet…',
+      success: 'Danke — Ihre Nachricht ist unterwegs. Ich antworte innerhalb eines Tages.',
+      error: 'Etwas ist schiefgelaufen. Bitte schreiben Sie mir direkt per E-Mail.',
+    },
   },
   footer: {
     copyright: 'Ikromjon Ochilov — Berlin',
