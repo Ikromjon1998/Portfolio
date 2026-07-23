@@ -36,6 +36,18 @@ test.describe('portfolio smoke', () => {
     expect(download.suggestedFilename()).toBe('Ikromjon-Ochilov-CV-EN.pdf');
   });
 
+  test('serves machine-readable profile files for agents', async ({ request }) => {
+    const llms = await request.get('/llms.txt');
+    expect(llms.ok()).toBeTruthy();
+    expect(await llms.text()).toContain('# Ikromjon Ochilov — Senior Full-Stack Engineer');
+
+    const resume = await request.get('/resume.json');
+    expect(resume.ok()).toBeTruthy();
+    const json = (await resume.json()) as { basics: { name: string }; projects: unknown[] };
+    expect(json.basics.name).toBe('Ikromjon Ochilov');
+    expect(json.projects.length).toBeGreaterThanOrEqual(11);
+  });
+
   test('every section renders', async ({ page }) => {
     await page.goto('/');
     for (const id of [
