@@ -17,7 +17,6 @@ function agentFiles(): Plugin {
 export default defineConfig({
   plugins: [react(), agentFiles()],
   build: {
-    // Covers the lazily-loaded @react-pdf/renderer chunk (~1.4 MB); the main bundle stays small.
     chunkSizeWarningLimit: 1500,
   },
   test: {

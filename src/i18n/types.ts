@@ -13,7 +13,6 @@ export interface ProjectTranslation<M extends string> {
   title: string;
   role: string;
   desc: string;
-  /** One localized label per metric id declared in `src/data/projects.ts`. */
   metrics: Record<M, string>;
 }
 
@@ -43,6 +42,11 @@ export interface Translations {
   topbar: {
     available: string;
     location: string;
+    nav: {
+      work: string;
+      ai: string;
+      contact: string;
+    };
   };
   hero: {
     eyebrow: string;

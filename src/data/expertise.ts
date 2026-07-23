@@ -1,5 +1,4 @@
 interface ExpertiseGroupShape {
-  /** Key into the localized `expertise.groups` map. */
   key: string;
   tags: readonly string[];
 }

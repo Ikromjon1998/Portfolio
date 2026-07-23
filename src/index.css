@@ -3,11 +3,12 @@
   --paper-2: #f2f2ed;
   --ink: #15171c;
   --ink-2: #565a63;
-  --ink-3: #8e929a;
+  --ink-3: #696c73;
   --line: #e4e4dd;
   --line-2: #d6d6ce;
   --cobalt: #2440c7;
   --cobalt-2: #4a63e0;
+  --accent-text: #2440c7;
   --wash: rgba(36, 64, 199, 0.06);
   --emerald: #147a56;
   --display: 'Space Grotesk', sans-serif;
@@ -21,12 +22,14 @@
   --paper-2: #1e2028;
   --ink: #eaeaed;
   --ink-2: #a0a4ad;
-  --ink-3: #6e727a;
+  --ink-3: #8e929c;
   --line: #2a2d35;
   --line-2: #363940;
   --cobalt: #4a63e0;
   --cobalt-2: #6b82f0;
+  --accent-text: #8b9cf4;
   --wash: rgba(74, 99, 224, 0.12);
+  --emerald: #2bc48a;
 }
 [data-theme='dark'] .topbar {
   background: rgba(21, 23, 28, 0.82);
@@ -92,7 +95,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cobalt);
+  color: var(--accent-text);
 }
 
 .topbar {
@@ -108,6 +111,29 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 60px;
+}
+section[id] {
+  scroll-margin-top: 72px;
+}
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.topnav a {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.topnav a:hover {
+  color: var(--accent-text);
+}
+@media (max-width: 860px) {
+  .topnav {
+    display: none;
+  }
 }
 .topbar-right {
   display: flex;
@@ -223,8 +249,8 @@ body {
   transition: all 0.15s ease;
 }
 .dark-toggle:hover {
-  border-color: var(--cobalt);
-  color: var(--cobalt);
+  border-color: var(--accent-text);
+  color: var(--accent-text);
 }
 
 .download-cv-topbar {
@@ -243,8 +269,8 @@ body {
   transition: all 0.15s ease;
 }
 .download-cv-topbar:hover {
-  border-color: var(--cobalt);
-  color: var(--cobalt);
+  border-color: var(--accent-text);
+  color: var(--accent-text);
 }
 .download-cv-topbar:disabled {
   opacity: 0.5;
@@ -272,8 +298,8 @@ body {
   cursor: pointer;
 }
 .links-btn:hover {
-  border-color: var(--cobalt);
-  color: var(--cobalt);
+  border-color: var(--accent-text);
+  color: var(--accent-text);
   transform: translateY(-1px);
 }
 [data-theme='dark'] .links-btn {
@@ -314,7 +340,7 @@ body {
   font-weight: 500;
 }
 .hero .lede b {
-  color: var(--cobalt);
+  color: var(--accent-text);
   font-weight: 600;
 }
 .hero p.sub {
@@ -349,7 +375,7 @@ body {
 }
 .btn:hover {
   background: var(--cobalt);
-  border-color: var(--cobalt);
+  border-color: var(--accent-text);
   transform: translateY(-1px);
 }
 .btn svg {
@@ -448,7 +474,7 @@ body {
   font-family: var(--mono);
   font-size: 11px;
   background: var(--wash);
-  color: var(--cobalt);
+  color: var(--accent-text);
   padding: 3px 8px;
   border-radius: 5px;
 }
@@ -555,7 +581,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--cobalt);
+  color: var(--accent-text);
   margin-bottom: 14px;
   display: flex;
   align-items: center;
@@ -604,7 +630,7 @@ body {
     transform 0.2s ease;
 }
 .oss:hover {
-  border-color: var(--cobalt);
+  border-color: var(--accent-text);
   box-shadow: 0 22px 50px -34px rgba(36, 64, 199, 0.5);
   transform: translateY(-2px);
 }
@@ -640,7 +666,7 @@ body {
 .oss-links a {
   font-family: var(--mono);
   font-size: 12.5px;
-  color: var(--cobalt);
+  color: var(--accent-text);
   text-decoration: none;
 }
 .oss-links a:hover {
@@ -663,7 +689,7 @@ body {
     transform 0.2s ease;
 }
 .proj:hover {
-  border-color: var(--cobalt);
+  border-color: var(--accent-text);
   box-shadow: 0 22px 50px -34px rgba(36, 64, 199, 0.5);
   transform: translateY(-2px);
 }
@@ -679,7 +705,7 @@ body {
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 500;
-  color: var(--cobalt);
+  color: var(--accent-text);
 }
 .proj-top .domain {
   font-family: var(--mono);
@@ -739,7 +765,7 @@ body {
 }
 .impact .m.neutral {
   background: var(--wash);
-  color: var(--cobalt);
+  color: var(--accent-text);
 }
 .impact .m svg {
   width: 13px;
@@ -801,7 +827,7 @@ body {
   line-height: 1.1;
 }
 .ai h2 span {
-  color: var(--cobalt);
+  color: var(--accent-text);
 }
 .ai p {
   color: var(--ink-2);
@@ -908,7 +934,7 @@ body {
 .edu .yr {
   font-family: var(--mono);
   font-size: 12px;
-  color: var(--cobalt);
+  color: var(--accent-text);
   letter-spacing: 0.04em;
 }
 .edu h3 {
@@ -1009,8 +1035,8 @@ body {
   transition: all 0.15s ease;
 }
 .links a:hover {
-  border-color: var(--cobalt);
-  color: var(--cobalt);
+  border-color: var(--accent-text);
+  color: var(--accent-text);
   transform: translateY(-1px);
 }
 .links a.primary {
@@ -1020,7 +1046,7 @@ body {
 }
 .links a.primary:hover {
   background: var(--cobalt);
-  border-color: var(--cobalt);
+  border-color: var(--accent-text);
   color: #fff;
 }
 

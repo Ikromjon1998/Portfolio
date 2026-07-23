@@ -9,6 +9,11 @@ export const en = {
   topbar: {
     available: 'Available for projects',
     location: '· Berlin, DE',
+    nav: {
+      work: 'Work',
+      ai: 'AI',
+      contact: 'Contact',
+    },
   },
   hero: {
     eyebrow: 'Senior Full-Stack Engineer · Laravel · React · AI',

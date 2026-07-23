@@ -1,10 +1,5 @@
 import { vi } from 'vitest';
 
-/**
- * Replaces `window.matchMedia`, which jsdom does not implement. Call from a
- * test to control the `matches` result (e.g. to simulate a dark-mode OS
- * preference); the setup file restores the non-matching default after each test.
- */
 export function stubMatchMedia(matches: boolean): void {
   const matchMedia = (query: string): MediaQueryList => ({
     matches,
@@ -32,10 +27,6 @@ function createEntry(target: Element, isIntersecting: boolean): IntersectionObse
   };
 }
 
-/**
- * Replaces `IntersectionObserver`, which jsdom does not implement. Keeps the
- * observer callback so tests can drive visibility via `intersect()`.
- */
 export class MockIntersectionObserver implements IntersectionObserver {
   static instances: MockIntersectionObserver[] = [];
 
@@ -73,7 +64,6 @@ export class MockIntersectionObserver implements IntersectionObserver {
     return [];
   }
 
-  /** Fires the observer callback for every currently observed element. */
   intersect(isIntersecting: boolean): void {
     this.callback(
       this.observed.map((target) => createEntry(target, isIntersecting)),

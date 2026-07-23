@@ -13,6 +13,11 @@ export function TopBar() {
           <span className="dot" />
           Ikromjon&nbsp;Ochilov
         </div>
+        <nav className="topnav" aria-label="Sections">
+          <a href="#work">{t.topbar.nav.work}</a>
+          <a href="#ai">{t.topbar.nav.ai}</a>
+          <a href="#contact">{t.topbar.nav.contact}</a>
+        </nav>
         <div className="topbar-right">
           <div className="status">
             <span className="pulse" />
