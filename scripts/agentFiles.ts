@@ -8,13 +8,6 @@ import { expertiseGroups } from '../src/data/expertise';
 
 const SITE_URL = 'https://ikromjon-ochilov.com/';
 
-/**
- * Machine-readable profile files for AI agents and recruiter tooling,
- * generated at build time from the same typed data the site renders —
- * they can never drift from the visible content. English only: these
- * files target tools, not visitors.
- */
-
 export function buildLlmsTxt(): string {
   const lines: string[] = [
     `# ${personal.name} — ${en.record.role}`,
