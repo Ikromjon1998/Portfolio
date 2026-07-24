@@ -55,6 +55,7 @@ same class of bug cross-platform through the axe color-contrast checks.
 - **Self-hosted fonts**: No Google Fonts CDN requests (GDPR-friendly)
 - **SEO**: Meta description, Open Graph, JSON-LD person schema, canonical URL, sitemap
 - **AI-agent friendly**: `/llms.txt` and `/resume.json` (JSON Resume schema), generated at build time from the same typed data the site renders
+- **"Ask my CV" assistant**: A Claude-powered chat (Netlify function + `@anthropic-ai/sdk`) grounded in the same generated profile — requires `ANTHROPIC_API_KEY` in the Netlify environment; the widget degrades gracefully to an email hint without it
 - **Print**: `@media print` stylesheet hides nav/toggles, forces black-on-white
 - **Accessible**: WCAG 2.1 AA — axe-verified in light and dark mode on every push, keyboard focus rings, `prefers-reduced-motion`, semantic HTML
 - **Security headers**: CSP, HSTS, nosniff, frame-ancestors, referrer and permissions policies

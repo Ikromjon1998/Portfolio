@@ -146,6 +146,14 @@ export const en = {
         desc: 'From database to UI — an AI feature shipped as a complete, maintainable, well-tested piece of product.',
       },
     ],
+    chat: {
+      title: 'Ask about my experience',
+      note: 'An AI assistant answers from my CV data — a live demo of the LLM integration work I do.',
+      placeholder: 'e.g. How much Laravel experience does he have?',
+      send: 'Ask',
+      sending: 'Thinking…',
+      error: 'The assistant is unavailable right now — please email me instead.',
+    },
   },
   openSource: {
     idx: '/03',

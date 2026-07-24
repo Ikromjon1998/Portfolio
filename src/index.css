@@ -606,6 +606,88 @@ section[id] {
   border-radius: 6px;
 }
 
+.askcv {
+  margin-top: 46px;
+  border: 1px solid var(--line-2);
+  border-radius: 13px;
+  background: #fff;
+  padding: 26px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+[data-theme='dark'] .askcv {
+  background: var(--paper-2);
+}
+.askcv h3 {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.askcv-note {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+.askcv-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0;
+}
+.askcv-msg {
+  font-size: 14.5px;
+  line-height: 1.55;
+  max-width: 56ch;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.askcv-msg.user {
+  align-self: flex-end;
+  background: var(--wash);
+  color: var(--ink);
+}
+.askcv-msg.assistant {
+  align-self: flex-start;
+  background: var(--paper-2);
+  color: var(--ink-2);
+  border: 1px solid var(--line);
+}
+[data-theme='dark'] .askcv-msg.assistant {
+  background: var(--paper);
+}
+.askcv-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.askcv-form input {
+  flex: 1;
+  min-width: 220px;
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  padding: 11px 13px;
+}
+.askcv-form input:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: -1px;
+}
+.askcv-form .btn {
+  border: none;
+  cursor: pointer;
+}
+.askcv-form .btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 .oss-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

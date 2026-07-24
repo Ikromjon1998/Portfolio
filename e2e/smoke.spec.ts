@@ -48,6 +48,20 @@ test.describe('portfolio smoke', () => {
     expect(json.projects.length).toBeGreaterThanOrEqual(11);
   });
 
+  test('asks the CV assistant a question', async ({ page }) => {
+    await page.route('**/.netlify/functions/ask-cv', (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({ reply: 'Six years across healthcare, EdTech and IoT.' }),
+      })
+    );
+    await page.goto('/');
+    await page.getByLabel('Ask about my experience').fill('How much experience does he have?');
+    await page.getByRole('button', { name: 'Ask', exact: true }).click();
+    await expect(page.getByText('Six years across healthcare, EdTech and IoT.')).toBeVisible();
+  });
+
   test('submits the contact form', async ({ page }) => {
     await page.route('**/', (route) =>
       route.request().method() === 'POST' ? route.fulfill({ status: 200 }) : route.continue()
