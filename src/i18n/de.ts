@@ -149,6 +149,14 @@ export const de = {
         desc: 'Von der Datenbank bis zur UI — ein KI-Feature als vollständiges, wartbares, gut getestetes Produktelement ausgeliefert.',
       },
     ],
+    chat: {
+      title: 'Fragen zu meiner Erfahrung',
+      note: 'Ein KI-Assistent antwortet auf Basis meiner CV-Daten — eine Live-Demo meiner LLM-Integrationsarbeit.',
+      placeholder: 'z. B. Wie viel Laravel-Erfahrung hat er?',
+      send: 'Fragen',
+      sending: 'Denkt nach…',
+      error: 'Der Assistent ist gerade nicht erreichbar — schreiben Sie mir bitte eine E-Mail.',
+    },
   },
   openSource: {
     idx: '/03',

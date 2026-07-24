@@ -1,6 +1,7 @@
 import { useTranslation } from '../i18n/useTranslation';
 import { interpolate } from '../i18n/interpolate';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { AskCV } from './AskCV';
 
 export function AI() {
   const { t } = useTranslation();
@@ -26,6 +27,9 @@ export function AI() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="wrap">
+        <AskCV />
       </div>
     </section>
   );

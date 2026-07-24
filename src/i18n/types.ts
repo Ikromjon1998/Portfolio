@@ -93,6 +93,14 @@ export interface Translations {
     headingHighlight: string;
     desc: string;
     items: readonly AiItem[];
+    chat: {
+      title: string;
+      note: string;
+      placeholder: string;
+      send: string;
+      sending: string;
+      error: string;
+    };
   };
   openSource: {
     idx: string;

@@ -9,7 +9,7 @@ import prettier from 'eslint-config-prettier';
 export default tseslint.config(
   { ignores: ['dist', 'coverage'] },
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx,mts}'],
     extends: [js.configs.recommended, ...tseslint.configs.recommendedTypeChecked],
     languageOptions: {
       ecmaVersion: 2022,
@@ -31,7 +31,13 @@ export default tseslint.config(
     },
   },
   {
-    files: ['vite.config.ts', 'playwright.config.ts', 'e2e/**/*.ts', 'scripts/**/*.ts'],
+    files: [
+      'vite.config.ts',
+      'playwright.config.ts',
+      'e2e/**/*.ts',
+      'scripts/**/*.ts',
+      'netlify/**/*.mts',
+    ],
     languageOptions: {
       globals: globals.node,
     },
