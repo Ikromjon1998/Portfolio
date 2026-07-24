@@ -1,10 +1,18 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { buildLlmsTxt } from '../../scripts/agentFiles';
 
-const MODEL = 'claude-haiku-4-5';
-const MAX_MESSAGE_CHARS = 1000;
-const MAX_TURNS = 12;
-const RATE_LIMIT_PER_MINUTE = 10;
+function envInt(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const value = Number.parseInt(raw, 10);
+  return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
+const MODEL = process.env.ASK_CV_MODEL || 'claude-haiku-4-5';
+const MAX_OUTPUT_TOKENS = envInt('ASK_CV_MAX_TOKENS', 400);
+const MAX_MESSAGE_CHARS = envInt('ASK_CV_MAX_MESSAGE_CHARS', 1000);
+const MAX_TURNS = envInt('ASK_CV_MAX_TURNS', 12);
+const RATE_LIMIT_PER_MINUTE = envInt('ASK_CV_RATE_LIMIT_PER_MINUTE', 10);
 const RATE_WINDOW_MS = 60_000;
 
 const requestLog = new Map<string, number[]>();
@@ -70,7 +78,7 @@ export default async function handler(req: Request): Promise<Response> {
   try {
     const response = await client.messages.create({
       model: MODEL,
-      max_tokens: 400,
+      max_tokens: MAX_OUTPUT_TOKENS,
       system: SYSTEM,
       messages,
     });
