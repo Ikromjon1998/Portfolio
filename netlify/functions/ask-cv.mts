@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { buildLlmsTxt } from '../../scripts/agentFiles';
 
-const MODEL = 'claude-opus-4-8';
+const MODEL = 'claude-haiku-4-5';
 const MAX_MESSAGE_CHARS = 1000;
 const MAX_TURNS = 12;
 const RATE_LIMIT_PER_MINUTE = 10;
@@ -70,9 +70,7 @@ export default async function handler(req: Request): Promise<Response> {
   try {
     const response = await client.messages.create({
       model: MODEL,
-      max_tokens: 1024,
-      thinking: { type: 'adaptive' },
-      output_config: { effort: 'low' },
+      max_tokens: 400,
       system: SYSTEM,
       messages,
     });
