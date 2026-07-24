@@ -3,6 +3,7 @@ import { personal } from '../data/personal';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { DownloadCVButton } from './DownloadCVButton';
 import { MultilineText } from './MultilineText';
+import { ContactForm } from './ContactForm';
 
 export function Contact() {
   const { t } = useTranslation();
@@ -42,6 +43,7 @@ export function Contact() {
           </a>
           <DownloadCVButton variant="contact" />
         </div>
+        <ContactForm />
       </div>
     </section>
   );

@@ -48,6 +48,18 @@ test.describe('portfolio smoke', () => {
     expect(json.projects.length).toBeGreaterThanOrEqual(11);
   });
 
+  test('submits the contact form', async ({ page }) => {
+    await page.route('**/', (route) =>
+      route.request().method() === 'POST' ? route.fulfill({ status: 200 }) : route.continue()
+    );
+    await page.goto('/');
+    await page.getByLabel('Name').fill('Jane Doe');
+    await page.getByLabel('Email', { exact: true }).fill('jane@example.com');
+    await page.getByLabel('What do you need built?').fill('A booking platform.');
+    await page.getByRole('button', { name: 'Send message' }).click();
+    await expect(page.getByRole('status')).toContainText('your message is on its way');
+  });
+
   test('every section renders', async ({ page }) => {
     await page.goto('/');
     for (const id of [

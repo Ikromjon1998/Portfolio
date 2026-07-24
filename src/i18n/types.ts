@@ -120,6 +120,16 @@ export interface Translations {
     heading: string;
     desc: string;
     mailSubject: string;
+    form: {
+      title: string;
+      name: string;
+      email: string;
+      message: string;
+      send: string;
+      sending: string;
+      success: string;
+      error: string;
+    };
   };
   footer: {
     copyright: string;
