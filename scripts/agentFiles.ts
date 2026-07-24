@@ -49,7 +49,7 @@ export function buildLlmsTxt(): string {
     );
   }
 
-  lines.push('## Open source', '');
+  lines.push('## Plugins & open source', '');
   for (const repo of openSourceRepos) {
     const item = en.openSource.items[repo.key];
     const demo = 'demo' in repo ? ` Live demo: ${repo.demo}` : '';
