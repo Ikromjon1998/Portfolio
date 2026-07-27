@@ -71,7 +71,9 @@ test.describe('portfolio smoke', () => {
     await page.getByLabel('Email', { exact: true }).fill('jane@example.com');
     await page.getByLabel('What do you need built?').fill('A booking platform.');
     await page.getByRole('button', { name: 'Send message' }).click();
-    await expect(page.getByRole('status')).toContainText('your message is on its way');
+    await expect(page.locator('#contact').getByRole('status')).toContainText(
+      'your message is on its way'
+    );
   });
 
   test('every section renders', async ({ page }) => {

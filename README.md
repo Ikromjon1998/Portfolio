@@ -6,6 +6,8 @@
 
 Vite + React + TypeScript portfolio with bilingual support (EN/DE), dark mode, and on-the-fly PDF CV generation.
 
+**How it's built and why:** see [ARCHITECTURE.md](ARCHITECTURE.md) — including why the AI assistant deliberately isn't RAG, and what's on the roadmap.
+
 ## Local development
 
 ```bash

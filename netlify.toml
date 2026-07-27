@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  # The ASK_CV_* vars are public tuning knobs (model name, size limits), not
+  # secrets — their values legitimately appear in the code and docs. Exempt
+  # them from Netlify's secrets scanning, which otherwise fails the build.
+  # ANTHROPIC_API_KEY stays scanned.
+  SECRETS_SCAN_OMIT_KEYS = "ASK_CV_MODEL,ASK_CV_MAX_TOKENS,ASK_CV_MAX_MESSAGE_CHARS,ASK_CV_MAX_TURNS,ASK_CV_RATE_LIMIT_PER_MINUTE"
+
 [functions]
   node_bundler = "esbuild"
 

@@ -96,10 +96,15 @@ export interface Translations {
     chat: {
       title: string;
       note: string;
+      viewSource: string;
       placeholder: string;
+      suggestions: readonly string[];
       send: string;
       sending: string;
       error: string;
+      errorRateLimited: string;
+      errorGeneric: string;
+      retry: string;
     };
   };
   openSource: {
