@@ -76,6 +76,23 @@ test.describe('portfolio smoke', () => {
     );
   });
 
+  test('serves search-appearance assets and valid structured data', async ({ page, request }) => {
+    for (const asset of [
+      '/favicon.ico',
+      '/favicon.svg',
+      '/favicon-96x96.png',
+      '/apple-touch-icon.png',
+    ]) {
+      const res = await request.get(asset);
+      expect(res.ok(), `${asset} should be served`).toBeTruthy();
+    }
+
+    await page.goto('/');
+    const raw = await page.locator('script[type="application/ld+json"]').textContent();
+    const data = JSON.parse(raw ?? '') as { '@graph': { '@type': string }[] };
+    expect(data['@graph'].map((node) => node['@type'])).toEqual(['WebSite', 'ProfilePage']);
+  });
+
   test('every section renders', async ({ page }) => {
     await page.goto('/');
     for (const id of [

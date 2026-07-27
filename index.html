@@ -11,10 +11,14 @@
     <meta name="author" content="Ikromjon Ochilov" />
     <link rel="canonical" href="https://ikromjon-ochilov.com/" />
     <link rel="alternate" type="application/json" title="JSON Resume" href="/resume.json" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafaf7" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#15171c" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ikromjon Ochilov" />
     <meta property="og:url" content="https://ikromjon-ochilov.com/" />
     <meta property="og:title" content="Ikromjon Ochilov — Senior Full-Stack Engineer · Berlin" />
     <meta
@@ -40,31 +44,46 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ikromjon Ochilov",
-        "jobTitle": "Senior Full-Stack Engineer",
-        "url": "https://ikromjon-ochilov.com/",
-        "email": "mailto:ikromjon98.98@icloud.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Berlin",
-          "addressCountry": "DE"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/ikromjon-ochilov-045560182/",
-          "https://github.com/Ikromjon1998"
-        ],
-        "knowsAbout": [
-          "Laravel",
-          "PHP",
-          "React",
-          "TypeScript",
-          "PostgreSQL",
-          "LLM integration",
-          "Playwright",
-          "QA automation"
-        ],
-        "knowsLanguage": ["uz", "ru", "en", "de"]
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Ikromjon Ochilov",
+            "alternateName": ["Ikromjon Ochilov Portfolio", "ikromjon-ochilov.com"],
+            "url": "https://ikromjon-ochilov.com/"
+          },
+          {
+            "@type": "ProfilePage",
+            "mainEntity": {
+              "@type": "Person",
+              "@id": "https://ikromjon-ochilov.com/#person",
+              "name": "Ikromjon Ochilov",
+              "jobTitle": "Senior Full-Stack Engineer",
+              "description": "Senior Full-Stack Engineer in Berlin building regulated, data-heavy platforms with Laravel, React/TypeScript and PostgreSQL, with a focus on production LLM integration.",
+              "url": "https://ikromjon-ochilov.com/",
+              "email": "mailto:ikromjon98.98@icloud.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Berlin",
+                "addressCountry": "DE"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/in/ikromjon-ochilov-045560182/",
+                "https://github.com/Ikromjon1998"
+              ],
+              "knowsAbout": [
+                "Laravel",
+                "PHP",
+                "React",
+                "TypeScript",
+                "PostgreSQL",
+                "LLM integration",
+                "Playwright",
+                "QA automation"
+              ],
+              "knowsLanguage": ["uz", "ru", "en", "de"]
+            }
+          }
+        ]
       }
     </script>
   </head>
