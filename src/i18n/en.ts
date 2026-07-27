@@ -70,6 +70,16 @@ export const en = {
         desc: 'Building and extending a SaaS platform for job evaluation and compensation analytics (Laravel, React/TypeScript, PostgreSQL), with a growing layer of LLM-powered features for analysing and structuring HR data.',
         metrics: { laravelReactTs: 'Laravel + React/TS', llmFeatures: 'LLM features' },
       },
+      portfolio: {
+        title: 'This Portfolio & Its AI Assistant',
+        role: 'Personal project · design, build & operations',
+        desc: 'The site you are reading. One typed data source renders the bilingual site, the PDF CV, and machine-readable llms.txt / resume.json — and grounds a Claude-powered assistant (Netlify Functions + Anthropic SDK) that answers questions about my work. Strict CSP, axe-verified accessibility and Playwright e2e tests in CI. Fully open source.',
+        metrics: {
+          cvChat: 'Claude-powered CV chat',
+          a11yCi: 'WCAG 2.1 AA · axe in CI',
+          openSourceRepo: 'Open source on GitHub',
+        },
+      },
       binschonda: {
         title: 'B2B Healthcare Platform',
         role: 'Senior Full-Stack Developer / Product Owner · Binschonda (Pflegedienst, 200+ staff)',
@@ -117,6 +127,7 @@ export const en = {
     },
     references: {
       refGradar: 'ref · current employer',
+      refPortfolio: 'ref · you are looking at it',
       refBinschonda: 'ref · Geschäftsführer — on request',
       refIuContract: 'ref · Engineering Manager — on request',
       refIuQa: 'ref · Engineering Manager — on request',
@@ -149,10 +160,21 @@ export const en = {
     chat: {
       title: 'Ask about my experience',
       note: 'An AI assistant answers from my CV data — a live demo of the LLM integration work I do.',
+      viewSource: 'View the source on GitHub',
       placeholder: 'e.g. How much Laravel experience does he have?',
+      suggestions: [
+        'What has he built in healthcare?',
+        'Has he shipped LLM features to production?',
+        'Is he available for freelance work?',
+        'How does this chat work?',
+      ],
       send: 'Ask',
       sending: 'Thinking…',
       error: 'The assistant is unavailable right now — please email me instead.',
+      errorRateLimited:
+        'A lot of questions in the last minute — please wait a moment and try again.',
+      errorGeneric: 'Something went wrong. Please try again.',
+      retry: 'Try again',
     },
   },
   openSource: {

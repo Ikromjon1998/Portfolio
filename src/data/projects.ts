@@ -29,8 +29,29 @@ export const projects = [
     ],
   },
   {
+    id: 'portfolio',
+    index: '01 · personal',
+    domain: 'AI / Open source',
+    duration: 'ongoing',
+    stack: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Netlify Functions',
+      'Anthropic Claude API',
+      'Playwright',
+      'Vitest',
+    ],
+    referenceKey: 'refPortfolio',
+    metrics: [
+      { id: 'cvChat', trend: 'neutral' },
+      { id: 'a11yCi', trend: 'neutral' },
+      { id: 'openSourceRepo', trend: 'neutral' },
+    ],
+  },
+  {
     id: 'binschonda',
-    index: '01',
+    index: '02',
     domain: 'Healthcare',
     duration: '15 months',
     stack: [
@@ -53,7 +74,7 @@ export const projects = [
   },
   {
     id: 'iuContract',
-    index: '02',
+    index: '03',
     domain: 'EdTech',
     duration: '12 months',
     stack: ['Laravel', 'PHP 8', 'Vue.js', 'React', 'Kafka', 'PostgreSQL', 'Docker', 'GitLab CI/CD'],
@@ -66,7 +87,7 @@ export const projects = [
   },
   {
     id: 'iuQa',
-    index: '03',
+    index: '04',
     domain: 'EdTech',
     duration: '12 months',
     stack: ['Playwright', 'TypeScript', 'Node.js', 'GitLab CI/CD', 'Allure', 'Workday APIs'],
@@ -78,7 +99,7 @@ export const projects = [
   },
   {
     id: 'balt',
-    index: '04',
+    index: '05',
     domain: 'IoT / Smart Building',
     duration: '8 months',
     stack: ['Laravel 9', 'PHP 8', 'Blade', 'InfluxDB', 'Node.js', 'REST APIs'],
@@ -90,7 +111,7 @@ export const projects = [
   },
   {
     id: 'parking',
-    index: '05',
+    index: '06',
     domain: 'IoT / MERN',
     duration: '14 months',
     stack: ['React', 'Express.js', 'Node.js', 'MongoDB', 'REST APIs', 'IoT integration'],

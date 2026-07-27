@@ -70,6 +70,16 @@ export const de = {
         desc: 'Entwicklung und Erweiterung einer SaaS-Plattform für Stellenbewertung und Vergütungsanalyse (Laravel, React/TypeScript, PostgreSQL) mit einer wachsenden Schicht LLM-gestützter Features zur Analyse und Strukturierung von HR-Daten.',
         metrics: { laravelReactTs: 'Laravel + React/TS', llmFeatures: 'LLM-Features' },
       },
+      portfolio: {
+        title: 'Dieses Portfolio & sein KI-Assistent',
+        role: 'Persönliches Projekt · Design, Entwicklung & Betrieb',
+        desc: 'Die Seite, die Sie gerade lesen. Eine typisierte Datenquelle rendert die zweisprachige Website, den PDF-Lebenslauf und maschinenlesbare llms.txt / resume.json — und erdet einen Claude-gestützten Assistenten (Netlify Functions + Anthropic SDK), der Fragen zu meiner Arbeit beantwortet. Strikte CSP, axe-geprüfte Barrierefreiheit und Playwright-E2E-Tests in der CI. Vollständig Open Source.',
+        metrics: {
+          cvChat: 'Claude-gestützter CV-Chat',
+          a11yCi: 'WCAG 2.1 AA · axe in der CI',
+          openSourceRepo: 'Open Source auf GitHub',
+        },
+      },
       binschonda: {
         title: 'B2B-Healthcare-Plattform',
         role: 'Senior Full-Stack Developer / Product Owner · Binschonda (Pflegedienst, 200+ Mitarbeiter)',
@@ -120,6 +130,7 @@ export const de = {
     },
     references: {
       refGradar: 'Ref. · aktueller Arbeitgeber',
+      refPortfolio: 'Ref. · Sie sehen es gerade',
       refBinschonda: 'Ref. · Geschäftsführer — auf Anfrage',
       refIuContract: 'Ref. · Engineering Manager — auf Anfrage',
       refIuQa: 'Ref. · Engineering Manager — auf Anfrage',
@@ -152,10 +163,21 @@ export const de = {
     chat: {
       title: 'Fragen zu meiner Erfahrung',
       note: 'Ein KI-Assistent antwortet auf Basis meiner CV-Daten — eine Live-Demo meiner LLM-Integrationsarbeit.',
+      viewSource: 'Quellcode auf GitHub ansehen',
       placeholder: 'z. B. Wie viel Laravel-Erfahrung hat er?',
+      suggestions: [
+        'Was hat er im Healthcare-Bereich gebaut?',
+        'Hat er LLM-Features produktiv ausgeliefert?',
+        'Ist er für Freelance-Projekte verfügbar?',
+        'Wie funktioniert dieser Chat?',
+      ],
       send: 'Fragen',
       sending: 'Denkt nach…',
       error: 'Der Assistent ist gerade nicht erreichbar — schreiben Sie mir bitte eine E-Mail.',
+      errorRateLimited:
+        'Gerade viele Fragen in kurzer Zeit — bitte warten Sie einen Moment und versuchen Sie es erneut.',
+      errorGeneric: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
+      retry: 'Erneut versuchen',
     },
   },
   openSource: {

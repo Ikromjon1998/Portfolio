@@ -5,6 +5,7 @@ export const personal = {
   linkedinHandle: 'in/ikromjon-ochilov',
   github: 'https://github.com/Ikromjon1998',
   githubHandle: 'github.com/Ikromjon1998',
+  portfolioRepo: 'https://github.com/Ikromjon1998/Portfolio',
   coreTags: ['Laravel', 'PHP 8', 'React', 'TypeScript', 'PostgreSQL'],
   aiTags: ['Claude API', 'OpenAI', 'LangChain', 'RAG'],
   stats: [
